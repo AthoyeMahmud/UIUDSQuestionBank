@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIU Data Science Question Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>UIU Data Science Question Bank</h1>
+                    <p>Your complete resource for previous trimester questions</p>
+                </div>
+                <nav class="nav">
+                    <button class="nav-toggle" id="navToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contribute" class="nav-link">Contribute</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Home View -->
+        <section id="home-view" class="view active">
+            <div class="container">
+                <div class="search-section">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search courses by name or code...">
+                    </div>
+                    <div class="filters">
+                        <select id="trimesterFilter" class="form-control">
+                            <option value="">All Trimesters</option>
+                            <option value="1">Trimester 1</option>
+                            <option value="2">Trimester 2</option>
+                            <option value="5">Trimester 5</option>
+                            <option value="6">Trimester 6</option>
+                            <option value="7">Trimester 7</option>
+                            <option value="8">Trimester 8</option>
+                            <option value="9">Trimester 9</option>
+                            <option value="10">Trimester 10</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalCourses">10</div>
+                        <div class="stat-label">Total Courses</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalQuestions">45</div>
+                        <div class="stat-label">Total Questions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="lastUpdated">Dec 2024</div>
+                        <div class="stat-label">Last Updated</div>
+                    </div>
+                </div>
+
+                <div class="courses-grid" id="coursesGrid">
+                    <!-- Course cards will be dynamically populated -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Detail View -->
+        <section id="course-view" class="view">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#home" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current" id="courseBreadcrumb">Course</span>
+                </div>
+
+                <div class="course-header">
+                    <div class="course-info">
+                        <h2 id="courseTitle">Course Title</h2>
+                        <p id="courseCode">Course Code</p>
+                        <p id="courseDescription">Course Description</p>
+                    </div>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Credits:</span>
+                            <span class="meta-value" id="courseCredits">3</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Trimester:</span>
+                            <span class="meta-value" id="courseTrimester">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-types">
+                    <div class="exam-type-card" id="midtermCard">
+                        <h3><i class="fas fa-file-alt"></i> Midterm Questions</h3>
+                        <div class="available-papers" id="midtermPapers">
+                            <!-- Midterm papers will be listed here -->
+                        </div>
+                    </div>
+                    <div class="exam-type-card" id="finalCard">
+                        <h3><i class="fas fa-graduation-cap"></i> Final Questions</h3>
+                        <div class="available-papers" id="finalPapers">
+                            <!-- Final papers will be listed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Viewer -->
+        <section id="pdf-view" class="view">
+            <div class="pdf-viewer-container">
+                <div class="pdf-header">
+                    <div class="pdf-nav">
+                        <button class="btn btn--secondary" id="backToCourse">
+                            <i class="fas fa-arrow-left"></i> Back to Course
+                        </button>
+                        <span class="pdf-title" id="pdfTitle">Question Paper</span>
+                    </div>
+                    <div class="pdf-actions">
+                        <button class="btn btn--primary" id="downloadPdf">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                <div class="pdf-content">
+                    <iframe id="pdfFrame" src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>UIU Data Science Question Bank</h4>
+                    <p>A comprehensive collection of previous trimester questions for UIU Data Science program.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">All Courses</a></li>
+                        <li><a href="#contribute">Contribute</a></li>
+                        <li><a href="https://github.com" target="_blank">GitHub Repository</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#guidelines">Contribution Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 UIU Data Science Question Bank. Made with ❤️ for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
