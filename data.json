@@ -1,0 +1,160 @@
+[
+    {
+        "id": "DS1501",
+        "title": "Programming for Data Science",
+        "code": "DS 1501",
+        "abbr": "Prog for DS",
+        "credits": 3,
+        "trimester": 1,
+        "description": "Introduction to programming concepts for data science applications",
+        "mid": [
+            { "url": "questions/DS1501/midterm/DS1501_midterm_spring2023.pdf" },
+            { "url": "questions/DS1501/midterm/DS1501_midterm_fall2023.pdf" },
+            { "url": "questions/DS1501/midterm/DS1501_midterm_spring2024.pdf" }
+        ],
+        "final": [
+            { "url": "questions/DS1501/final/DS1501_final_spring2023.pdf" },
+            { "url": "questions/DS1501/final/DS1501_final_fall2023.pdf" }
+        ],
+        "classtest": [
+            { "url": "questions/DS1501/classtest/DS1501_classtest_spring2023.pdf" }
+        ]
+    },
+    {
+        "id": "DS1115",
+        "title": "Object Oriented Programming for Data Science",
+        "code": "DS 1115",
+        "abbr": "OOP for DS",
+        "credits": 3,
+        "trimester": 2,
+        "description": "Object-oriented programming concepts applied to data science",
+        "mid": [
+            { "url": "questions/DS1115/midterm/DS1115_midterm_spring2023.pdf" },
+            { "url": "questions/DS1115/midterm/DS1115_midterm_fall2023.pdf" }
+        ],
+        "final": [
+            { "url": "questions/DS1115/final/DS1115_final_spring2023.pdf" },
+            { "url": "questions/DS1115/final/DS1115_final_fall2023.pdf" }
+        ],
+        "classtest": []
+    },
+    {
+        "id": "DS1101",
+        "title": "Fundamentals of Data Science",
+        "code": "DS 1101",
+        "abbr": "FDS",
+        "credits": 3,
+        "trimester": 3,
+        "description": "Core concepts and principles of data science",
+        "mid": [
+            { "url": "questions/DS1101/midterm/DS1101_midterm_spring2023.pdf" },
+            { "url": "questions/DS1101/midterm/DS1101_midterm_fall2023.pdf" }
+        ],
+        "final": [
+            { "url": "questions/DS1101/final/DS1101_final_spring2023.pdf" }
+        ],
+        "classtest": []
+    },
+    {
+        "id": "DS3885",
+        "title": "Data Wrangling",
+        "code": "DS 3885",
+        "abbr": "Data Wrangling",
+        "credits": 3,
+        "trimester": 5,
+        "description": "Data cleaning, transformation, and preprocessing techniques",
+        "mid": [
+            { "url": "questions/DS3885/midterm/DS3885_midterm_fall2023.pdf" }
+        ],
+        "final": [
+            { "url": "questions/DS3885/final/DS3885_final_fall2023.pdf" }
+        ],
+        "classtest": []
+    },
+    {
+        "id": "MATH1151",
+        "title": "Fundamental Calculus",
+        "code": "MATH 1151",
+        "abbr": "Calculus",
+        "credits": 3,
+        "trimester": 2,
+        "description": "Differential and integral calculus foundations",
+        "mid": [
+            { "url": "questions/MATH1151/midterm/MATH1151_midterm_spring2023.pdf" },
+            { "url": "questions/MATH1151/midterm/MATH1151_midterm_fall2023.pdf" }
+        ],
+        "final": [
+            { "url": "questions/MATH1151/final/MATH1151_final_fall2023.pdf" },
+            { "url": "questions/MATH1151/final/MATH1151_final_spring2023.pdf" }
+        ],
+        "classtest": []
+    },
+    {
+        "id": "MATH2107",
+        "title": "Linear Algebra",
+        "code": "MATH 2107",
+        "abbr": "LA",
+        "credits": 3,
+        "trimester": 3,
+        "description": "Matrix operations, vector spaces, and linear transformations",
+        "mid": [
+            { "url": "questions/MATH2107/midterm/MATH2107_midterm_spring2023.pdf" },
+            { "url": "questions/MATH2107/midterm/MATH2107_midterm_fall2023.pdf" }
+        ],
+        "final": [
+            { "url": "questions/MATH2107/final/MATH2107_final_spring2023.pdf" }
+        ],
+        "classtest": []
+    },
+    {
+        "id": "CSE2215",
+        "title": "Data Structures and Algorithms I",
+        "code": "CSE 2215",
+        "abbr": "DSA 1",
+        "credits": 3,
+        "trimester": 4,
+        "description": "Fundamental data structures and algorithmic thinking",
+        "mid": [
+            { "url": "questions/CSE2215/midterm/CSE2215_midterm_spring2023.pdf" },
+            { "url": "questions/CSE2215/midterm/CSE2215_midterm_fall2023.pdf" }
+        ],
+        "final": [
+            { "url": "questions/CSE2215/final/CSE2215_final_spring2023.pdf" },
+            { "url": "questions/CSE2215/final/CSE2215_final_fall2023.pdf" }
+        ],
+        "classtest": []
+    },
+    {
+        "id": "CSE2213",
+        "title": "Discrete Mathematics",
+        "code": "CSE 2213",
+        "abbr": "DM",
+        "credits": 3,
+        "trimester": 4,
+        "description": "Mathematical foundations for computer science",
+        "mid": [
+            { "url": "questions/CSE2213/midterm/CSE2213_midterm_spring2023.pdf" },
+            { "url": "questions/CSE2213/midterm/CSE2213_midterm_fall2023.pdf" }
+        ],
+        "final": [
+            { "url": "questions/CSE2213/final/CSE2213_final_spring2023.pdf" }
+        ],
+        "classtest": []
+    },
+    {
+        "id": "CSE2217",
+        "title": "Data Structures and Algorithms II",
+        "code": "CSE 2217",
+        "abbr": "DSA 2",
+        "credits": 3,
+        "trimester": 5,
+        "description": "Advanced data structures and algorithmic thinking",
+        "mid": [],
+        "final": [
+            { "url": "questions/CSE2217/final/CSE2217_Final_241.pdf" },
+            { "url": "questions/CSE2217/final/CSE2217_Final_242.pdf" },
+            { "url": "questions/CSE2217/final/CSE2217_Final_243.pdf" }
+        ],
+        "classtest": []
+    }
+]

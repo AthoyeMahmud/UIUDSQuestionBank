@@ -8,172 +8,28 @@ class UIUQuestionBank {
         this.searchQuery = '';
         
         // Application data
-        this.data = {
-            "courses": [
-                {
-                    "id": "DS1501",
-                    "title": "Programming for Data Science",
-                    "code": "DS 1501",
-                    "credits": 3,
-                    "trimester": 1,
-                    "description": "Introduction to programming concepts for data science applications",
-                    "exams": {
-                        "midterm": {
-                            "spring2023": { "available": true, "filename": "DS1501_midterm_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "DS1501_midterm_fall2023.pdf" },
-                            "spring2024": { "available": true, "filename": "DS1501_midterm_spring2024.pdf" }
-                        },
-                        "final": {
-                            "spring2023": { "available": true, "filename": "DS1501_final_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "DS1501_final_fall2023.pdf" }
-                        },
-                        "classtest": {
-                            "spring2023": { "available": true, "filename": "DS1501_classtest_spring2023.pdf" }
-                        }
-                    }
-                },
-                {
-                    "id": "DS1115",
-                    "title": "Object Oriented Programming for Data Science",
-                    "code": "DS 1115",
-                    "credits": 3,
-                    "trimester": 2,
-                    "description": "Object-oriented programming concepts applied to data science",
-                    "exams": {
-                        "midterm": {
-                            "spring2023": { "available": true, "filename": "DS1115_midterm_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "DS1115_midterm_fall2023.pdf" }
-                        },
-                        "final": {
-                            "spring2023": { "available": true, "filename": "DS1115_final_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "DS1115_final_fall2023.pdf" }
-                        }
-                    }
-                },
-                {
-                    "id": "DS1101",
-                    "title": "Fundamentals of Data Science",
-                    "code": "DS 1101",
-                    "credits": 3,
-                    "trimester": 3,
-                    "description": "Core concepts and principles of data science",
-                    "exams": {
-                        "midterm": {
-                            "spring2023": { "available": true, "filename": "DS1101_midterm_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "DS1101_midterm_fall2023.pdf" }
-                        },
-                        "final": {
-                            "spring2023": { "available": true, "filename": "DS1101_final_spring2023.pdf" }
-                        }
-                    }
-                },
-                {
-                    "id": "DS3885",
-                    "title": "Data Wrangling",
-                    "code": "DS 3885",
-                    "credits": 3,
-                    "trimester": 5,
-                    "description": "Data cleaning, transformation, and preprocessing techniques",
-                    "exams": {
-                        "midterm": {
-                            "fall2023": { "available": true, "filename": "DS3885_midterm_fall2023.pdf" }
-                        },
-                        "final": {
-                            "fall2023": { "available": true, "filename": "DS3885_final_fall2023.pdf" }
-                        }
-                    }
-                },
-                {
-                    "id": "MATH1151",
-                    "title": "Fundamental Calculus",
-                    "code": "MATH 1151",
-                    "credits": 3,
-                    "trimester": 2,
-                    "description": "Differential and integral calculus foundations",
-                    "exams": {
-                        "midterm": {
-                            "spring2023": { "available": true, "filename": "MATH1151_midterm_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "MATH1151_midterm_fall2023.pdf" }
-                        },
-                        "final": {
-                            "spring2023": { "available": true, "filename": "MATH1151_final_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "MATH1151_final_fall2023.pdf" }
-                        }
-                    }
-                },
-                {
-                    "id": "MATH2107",
-                    "title": "Linear Algebra",
-                    "code": "MATH 2107",
-                    "credits": 3,
-                    "trimester": 3,
-                    "description": "Matrix operations, vector spaces, and linear transformations",
-                    "exams": {
-                        "midterm": {
-                            "spring2023": { "available": true, "filename": "MATH2107_midterm_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "MATH2107_midterm_fall2023.pdf" }
-                        },
-                        "final": {
-                            "spring2023": { "available": true, "filename": "MATH2107_final_spring2023.pdf" }
-                        }
-                    }
-                },
-                {
-                    "id": "CSE2215",
-                    "title": "Data Structures and Algorithms I",
-                    "code": "CSE 2215",
-                    "credits": 3,
-                    "trimester": 4,
-                    "description": "Fundamental data structures and algorithmic thinking",
-                    "exams": {
-                        "midterm": {
-                            "spring2023": { "available": true, "filename": "CSE2215_midterm_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "CSE2215_midterm_fall2023.pdf" }
-                        },
-                        "final": {
-                            "spring2023": { "available": true, "filename": "CSE2215_final_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "CSE2215_final_fall2023.pdf" }
-                        }
-                    }
-                },
-                {
-                    "id": "CSE2213",
-                    "title": "Discrete Mathematics",
-                    "code": "CSE 2213",
-                    "credits": 3,
-                    "trimester": 4,
-                    "description": "Mathematical foundations for computer science",
-                    "exams": {
-                        "midterm": {
-                            "spring2023": { "available": true, "filename": "CSE2213_midterm_spring2023.pdf" },
-                            "fall2023": { "available": true, "filename": "CSE2213_midterm_fall2023.pdf" }
-                        },
-                        "final": {
-                            "spring2023": { "available": true, "filename": "CSE2213_final_spring2023.pdf" }
-                        }
-                    }
-                }
-            ],
-            "trimesters": [
-                { "id": "spring2023", "name": "Spring 2023", "year": 2023, "season": "Spring" },
-                { "id": "fall2023", "name": "Fall 2023", "year": 2023, "season": "Fall" },
-                { "id": "spring2024", "name": "Spring 2024", "year": 2024, "season": "Spring" },
-                { "id": "fall2024", "name": "Fall 2024", "year": 2024, "season": "Fall" }
-            ],
-            "examTypes": [
-                { "id": "midterm", "name": "Midterm", "description": "Mid-semester examinations" },
-                { "id": "final", "name": "Final", "description": "End-semester examinations" },
-                { "id": "classtest", "name": "Class Test", "description": "Regular class assessments" }
-            ]
-        };
-
-        this.init();
+        this.data = null;
     }
 
-    init() {
+    async init() {
+        await this.loadData();
         this.setupEventListeners();
         this.renderHomeView();
         this.updateStats();
+    }
+
+    async loadData() {
+        try {
+            const response = await fetch('data.json');
+            this.data = await response.json();
+            this.examTypes = [
+                { id: 'mid', name: 'Midterm', description: 'Mid-semester examinations' },
+                { id: 'final', name: 'Final', description: 'End-semester examinations' },
+                { id: 'classtest', name: 'Class Test', description: 'Regular class assessments' }
+            ];
+        } catch (error) {
+            console.error('Error loading data:', error);
+        }
     }
 
     setupEventListeners() {
@@ -195,6 +51,14 @@ class UIUQuestionBank {
                     const level = e.target.dataset.level;
                     this.navigateToLevel(level);
                 }
+            });
+        }
+
+        // Back button in PDF view
+        const backBtn = document.getElementById('backBtn');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                this.goBack();
             });
         }
 
@@ -243,6 +107,16 @@ class UIUQuestionBank {
         }
     }
 
+    goBack() {
+        if (this.currentView === 'pdf' && this.currentCourse && this.currentExamType) {
+            this.showTrimesterView(this.currentCourse, this.currentExamType);
+        } else if (this.currentView === 'trimester' && this.currentCourse) {
+            this.showCourseView(this.currentCourse);
+        } else if (this.currentView === 'course') {
+            this.renderHomeView();
+        }
+    }
+
     navigateToLevel(level) {
         switch (level) {
             case 'home':
@@ -275,6 +149,13 @@ class UIUQuestionBank {
             targetView.classList.add('view--active');
         }
         this.currentView = viewName;
+
+        // Add/remove body class for special PDF view styling
+        if (viewName === 'pdf') {
+            document.body.classList.add('pdf-view-active');
+        } else {
+            document.body.classList.remove('pdf-view-active');
+        }
     }
 
     updateBreadcrumb(levels) {
@@ -312,10 +193,11 @@ class UIUQuestionBank {
         const courseGrid = document.getElementById('courseGrid');
         if (!courseGrid) return;
 
-        const filteredCourses = this.data.courses.filter(course => {
+        const filteredCourses = this.data.filter(course => {
             if (!this.searchQuery) return true;
             return course.title.toLowerCase().includes(this.searchQuery) ||
                    course.code.toLowerCase().includes(this.searchQuery) ||
+                   (course.abbr && course.abbr.toLowerCase().includes(this.searchQuery)) ||
                    course.description.toLowerCase().includes(this.searchQuery);
         });
 
@@ -350,7 +232,7 @@ class UIUQuestionBank {
 
     showCourseView(courseId) {
         this.currentCourse = courseId;
-        const course = this.data.courses.find(c => c.id === courseId);
+        const course = this.data.find(c => c.id === courseId);
         
         if (!course) return;
 
@@ -379,8 +261,8 @@ class UIUQuestionBank {
         const examTypeGrid = document.getElementById('examTypeGrid');
         if (!examTypeGrid) return;
         
-        examTypeGrid.innerHTML = this.data.examTypes.map(examType => {
-            const examCount = course.exams[examType.id] ? Object.keys(course.exams[examType.id]).length : 0;
+        examTypeGrid.innerHTML = this.examTypes.map(examType => {
+            const examCount = course[examType.id] ? course[examType.id].length : 0;
             const isDisabled = examCount === 0;
             
             return `
@@ -398,8 +280,8 @@ class UIUQuestionBank {
         this.currentCourse = courseId;
         this.currentExamType = examType;
         
-        const course = this.data.courses.find(c => c.id === courseId);
-        const examTypeData = this.data.examTypes.find(et => et.id === examType);
+        const course = this.data.find(c => c.id === courseId);
+        const examTypeData = this.examTypes.find(et => et.id === examType);
         
         if (!course || !examTypeData) return;
 
@@ -418,16 +300,39 @@ class UIUQuestionBank {
         const trimesterGrid = document.getElementById('trimesterGrid');
         if (!trimesterGrid) return;
 
-        const availableTrimesters = course.exams[examType] || {};
+        const availableExams = course[examType] || [];
         
-        const trimesterCards = this.data.trimesters
-            .filter(trimester => availableTrimesters[trimester.id])
-            .map(trimester => `
-                <div class="trimester-card" data-trimester-id="${trimester.id}">
-                    <div class="trimester-card__season">${trimester.season}</div>
-                    <div class="trimester-card__year">${trimester.year}</div>
+        const trimesterCards = availableExams
+            .map(exam => {
+                const urlParts = exam.url.split('/');
+                const filename = urlParts[urlParts.length - 1];
+                const nameParts = filename.split('.')[0].split('_');
+                let trimesterId, trimesterName;
+
+                if (nameParts.length > 2) {
+                    const potentialTrimesterId = nameParts[nameParts.length - 1];
+                    if (/^[0-9]{3}$/.test(potentialTrimesterId)) { // e.g. 241
+                        trimesterId = potentialTrimesterId;
+                        trimesterName = this.formatTrimesterId(trimesterId);
+                    } else if (nameParts.length > 2 && (nameParts[1] === 'midterm' || nameParts[1] === 'final' || nameParts[1] === 'classtest')) { // e.g. spring2023
+                        trimesterId = nameParts[2];
+                        trimesterName = {
+                            season: trimesterId.replace(/[0-9]/g, ''),
+                            year: trimesterId.replace(/[^0-9]/g, '')
+                        };
+                    } else {
+                        return ''; // Fallback for unknown format
+                    }
+                } else {
+                    return ''; // Invalid filename format
+                }
+
+                return `
+                <div class="trimester-card" data-trimester-id="${trimesterId}" data-filename="${filename}">
+                    <div class="trimester-card__season">${trimesterName.season}</div>
+                    <div class="trimester-card__year">${trimesterName.year}</div>
                 </div>
-            `).join('');
+            `}).join('');
 
         if (trimesterCards) {
             trimesterGrid.innerHTML = trimesterCards;
@@ -451,25 +356,63 @@ class UIUQuestionBank {
         this.currentExamType = examType;
         this.currentTrimester = trimesterId;
         
-        const course = this.data.courses.find(c => c.id === courseId);
-        const examTypeData = this.data.examTypes.find(et => et.id === examType);
-        const trimesterData = this.data.trimesters.find(t => t.id === trimesterId);
+        const course = this.data.find(c => c.id === courseId);
+        const examTypeData = this.examTypes.find(et => et.id === examType);
+        let trimesterName;
+
+        if (/^[0-9]{3}$/.test(trimesterId)) {
+            trimesterName = this.formatTrimesterId(trimesterId);
+        } else {
+            trimesterName = {
+                season: trimesterId.replace(/[0-9]/g, ''),
+                year: trimesterId.replace(/[^0-9]/g, '')
+            };
+        }
         
-        if (!course || !examTypeData || !trimesterData) return;
+        if (!course || !examTypeData) return;
 
         this.showView('pdf');
         this.updateBreadcrumb([
             { text: 'Home', level: 'home' },
             { text: course.code, level: 'course' },
             { text: examTypeData.name, level: 'examType' },
-            { text: trimesterData.name, level: 'pdf' }
+            { text: `${trimesterName.season} ${trimesterName.year}`, level: 'pdf' }
         ]);
 
         // Update PDF view
         const pdfTitle = document.getElementById('pdfTitle');
         if (pdfTitle) {
-            pdfTitle.textContent = `${course.code} - ${examTypeData.name} - ${trimesterData.name}`;
+            pdfTitle.textContent = `${course.code} - ${examTypeData.name} - ${trimesterName.season} ${trimesterName.year}`;
         }
+
+        // Show PDF preview
+        const exam = this.findExam(courseId, examType, trimesterId);
+        const pdfViewer = document.getElementById('pdfViewer');
+        if (pdfViewer && exam) {
+            pdfViewer.innerHTML = `<embed src="${exam.url}" type="application/pdf" width="100%" height="100%"/>`;
+        } else if (pdfViewer) {
+            pdfViewer.innerHTML = `
+                <div class="pdf-placeholder">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                    <p>PDF Preview</p>
+                    <p class="pdf-placeholder__note">Could not load PDF preview.</p>
+                </div>
+            `;
+        }
+    }
+
+    findExam(courseId, examType, trimesterId) {
+        const course = this.data.find(c => c.id === courseId);
+        if (!course) return null;
+
+        const exams = course[examType] || [];
+        
+        // This regex handles both 'spring2023' and '242' style trimester IDs in filenames
+        const regex = new RegExp(`_${trimesterId}\\.pdf$`);
+        return exams.find(e => regex.test(e.url));
     }
 
     downloadPDF() {
@@ -478,58 +421,63 @@ class UIUQuestionBank {
             return;
         }
         
-        const course = this.data.courses.find(c => c.id === this.currentCourse);
-        if (!course) {
-            alert('Course not found');
-            return;
-        }
+        const exam = this.findExam(this.currentCourse, this.currentExamType, this.currentTrimester);
 
-        const examData = course.exams[this.currentExamType];
-        if (!examData) {
-            alert('Exam type not found');
-            return;
-        }
-
-        const trimesterData = examData[this.currentTrimester];
-        if (!trimesterData || !trimesterData.available) {
+        if (!exam) {
             alert('PDF not available for download');
             return;
         }
 
-        // In a real implementation, this would download the actual PDF
-        // For now, we'll show a message and create a sample download
-        const filename = trimesterData.filename;
+        const filename = exam.url.split('/').pop();
         
-        // Create a mock download link
+        // Create a download link and click it
         const link = document.createElement('a');
-        link.href = '#';
+        link.href = exam.url;
         link.download = filename;
-        link.textContent = 'Download PDF';
-        
-        // Show success message
-        alert(`PDF "${filename}" would be downloaded in a real implementation.\n\nIn production, this would link to the actual PDF file stored in your repository.`);
-        
-        console.log(`Mock download: ${filename}`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
     updateStats() {
         // Update course count
         const courseCount = document.getElementById('courseCount');
         if (courseCount) {
-            courseCount.textContent = this.data.courses.length;
+            courseCount.textContent = this.data.length;
         }
         
-        // Update trimester count
+        // Update trimester count - This is tricky as trimesters are not a separate list anymore
         const trimesterCount = document.getElementById('trimesterCount');
         if (trimesterCount) {
-            trimesterCount.textContent = this.data.trimesters.length;
+            const allTrimesters = new Set();
+            this.data.forEach(course => {
+                this.examTypes.forEach(examType => {
+                    if (course[examType.id]) {
+                        course[examType.id].forEach(exam => {
+                            const filename = exam.url.split('/').pop();
+                            const nameParts = filename.split('.')[0].split('_');
+                            if (nameParts.length > 2) {
+                                const potentialTrimesterId = nameParts[nameParts.length - 1];
+                                if (/^[0-9]{3}$/.test(potentialTrimesterId)) {
+                                    allTrimesters.add(potentialTrimesterId);
+                                } else if (nameParts.length > 2) {
+                                    allTrimesters.add(nameParts[2]);
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+            trimesterCount.textContent = allTrimesters.size;
         }
         
         // Update exam count
         let totalExams = 0;
-        this.data.courses.forEach(course => {
-            Object.values(course.exams).forEach(examType => {
-                totalExams += Object.keys(examType).length;
+        this.data.forEach(course => {
+            this.examTypes.forEach(examType => {
+                if (course[examType.id]) {
+                    totalExams += course[examType.id].length;
+                }
             });
         });
         
@@ -538,11 +486,27 @@ class UIUQuestionBank {
             examCount.textContent = totalExams;
         }
     }
+
+    formatTrimesterId(trimesterId) {
+        if (!trimesterId || trimesterId.length !== 3) {
+            return { season: 'Unknown', year: 'N/A' };
+        }
+        const year = `20${trimesterId.substring(0, 2)}`;
+        const seasonCode = trimesterId.substring(2);
+        let season = 'Unknown';
+        switch (seasonCode) {
+            case '1': season = 'Spring'; break;
+            case '2': season = 'Summer'; break;
+            case '3': season = 'Fall'; break;
+        }
+        return { season, year };
+    }
 }
 
 // Initialize the application when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     window.uiuQuestionBank = new UIUQuestionBank();
+    await window.uiuQuestionBank.init();
 });
 
 // Service Worker registration for offline support (optional)
