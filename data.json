@@ -1,9 +1,27 @@
 [
     {
+        "id": "BDS1201",
+        "title": "History of the Emergence of Bangladesh",
+        "code": "BDS 1201",
+        "abbr": "BDS",
+        "credits": 3,
+        "trimester": 1,
+        "description": "Exploration of the historical events leading to the emergence of Bangladesh",
+        "mid": [
+            { "url": "questions/BDS1201/mid/BDS1201_Mid_222.pdf" }
+        ],
+        "final": [
+            { "url": "questions/BDS1201/final/BDS1201_Final_221.pdf" },
+            { "url": "questions/BDS1201/final/BDS1201_Final_223_A.pdf" },
+            { "url": "questions/BDS1201/final/BDS1201_Final_223_B.pdf" },
+            { "url": "questions/BDS1201/final/BDS1201_Final_231.pdf" }
+        ]
+    },
+    {
         "id": "DS1501",
         "title": "Programming for Data Science",
         "code": "DS 1501",
-        "abbr": "Prog for DS",
+        "abbr": "PDS",
         "credits": 3,
         "trimester": 1,
         "description": "Introduction to programming concepts for data science applications",
