@@ -5,168 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UIU Data Science Question Bank</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>UIU Data Science Question Bank</h1>
-                    <p>Your complete resource for previous trimester questions</p>
+            <div class="header__content">
+                <div class="header__brand">
+                    <h1 class="header__title">UIU Data Science Question Bank</h1>
+                    <p class="header__subtitle">Complete collection of previous trimester question papers</p>
                 </div>
-                <nav class="nav">
-                    <button class="nav-toggle" id="navToggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="#home" class="nav-link">Home</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#contribute" class="nav-link">Contribute</a></li>
-                    </ul>
-                </nav>
+                <div class="header__search">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search courses...">
+                </div>
             </div>
         </div>
     </header>
 
+    <nav class="breadcrumb" id="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="#" class="breadcrumb__link" data-level="home">Home</a>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
     <main class="main">
-        <!-- Home View -->
-        <section id="home-view" class="view active">
-            <div class="container">
-                <div class="search-section">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="searchInput" placeholder="Search courses by name or code...">
-                    </div>
-                    <div class="filters">
-                        <select id="trimesterFilter" class="form-control">
-                            <option value="">All Trimesters</option>
-                            <option value="1">Trimester 1</option>
-                            <option value="2">Trimester 2</option>
-                            <option value="5">Trimester 5</option>
-                            <option value="6">Trimester 6</option>
-                            <option value="7">Trimester 7</option>
-                            <option value="8">Trimester 8</option>
-                            <option value="9">Trimester 9</option>
-                            <option value="10">Trimester 10</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="stats-section">
-                    <div class="stat-card">
-                        <div class="stat-number" id="totalCourses">10</div>
-                        <div class="stat-label">Total Courses</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="totalQuestions">45</div>
-                        <div class="stat-label">Total Questions</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="lastUpdated">Dec 2024</div>
-                        <div class="stat-label">Last Updated</div>
-                    </div>
-                </div>
-
-                <div class="courses-grid" id="coursesGrid">
-                    <!-- Course cards will be dynamically populated -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Course Detail View -->
-        <section id="course-view" class="view">
-            <div class="container">
-                <div class="breadcrumb">
-                    <a href="#home" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current" id="courseBreadcrumb">Course</span>
-                </div>
-
-                <div class="course-header">
-                    <div class="course-info">
-                        <h2 id="courseTitle">Course Title</h2>
-                        <p id="courseCode">Course Code</p>
-                        <p id="courseDescription">Course Description</p>
-                    </div>
-                    <div class="course-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Credits:</span>
-                            <span class="meta-value" id="courseCredits">3</span>
+        <div class="container">
+            <!-- Home View -->
+            <section id="homeView" class="view view--active">
+                <div class="welcome">
+                    <h2>Welcome to UIU Data Science Question Bank</h2>
+                    <p>Access previous trimester question papers for all Data Science program courses. Browse by course, exam type, and trimester.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat__number" id="courseCount">8</span>
+                            <span class="stat__label">Courses</span>
                         </div>
-                        <div class="meta-item">
-                            <span class="meta-label">Trimester:</span>
-                            <span class="meta-value" id="courseTrimester">1</span>
+                        <div class="stat">
+                            <span class="stat__number" id="examCount">32</span>
+                            <span class="stat__label">Question Papers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__number" id="trimesterCount">4</span>
+                            <span class="stat__label">Trimesters</span>
                         </div>
                     </div>
                 </div>
+                
+                <div class="course-grid" id="courseGrid">
+                    <!-- Course cards will be populated by JavaScript -->
+                </div>
+            </section>
 
-                <div class="exam-types">
-                    <div class="exam-type-card" id="midtermCard">
-                        <h3><i class="fas fa-file-alt"></i> Midterm Questions</h3>
-                        <div class="available-papers" id="midtermPapers">
-                            <!-- Midterm papers will be listed here -->
+            <!-- Course Detail View -->
+            <section id="courseView" class="view">
+                <div class="course-detail">
+                    <div class="course-header">
+                        <h2 class="course-title" id="courseTitle"></h2>
+                        <p class="course-description" id="courseDescription"></p>
+                        <div class="course-meta">
+                            <span class="course-credits" id="courseCredits"></span>
+                            <span class="course-trimester" id="courseTrimester"></span>
                         </div>
                     </div>
-                    <div class="exam-type-card" id="finalCard">
-                        <h3><i class="fas fa-graduation-cap"></i> Final Questions</h3>
-                        <div class="available-papers" id="finalPapers">
-                            <!-- Final papers will be listed here -->
+                    
+                    <div class="exam-types">
+                        <h3>Select Exam Type</h3>
+                        <div class="exam-type-grid" id="examTypeGrid">
+                            <!-- Exam type buttons will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- PDF Viewer -->
-        <section id="pdf-view" class="view">
-            <div class="pdf-viewer-container">
-                <div class="pdf-header">
-                    <div class="pdf-nav">
-                        <button class="btn btn--secondary" id="backToCourse">
-                            <i class="fas fa-arrow-left"></i> Back to Course
-                        </button>
-                        <span class="pdf-title" id="pdfTitle">Question Paper</span>
-                    </div>
-                    <div class="pdf-actions">
-                        <button class="btn btn--primary" id="downloadPdf">
-                            <i class="fas fa-download"></i> Download
-                        </button>
+            <!-- Trimester Selection View -->
+            <section id="trimesterView" class="view">
+                <div class="trimester-selection">
+                    <h3>Select Trimester</h3>
+                    <div class="trimester-grid" id="trimesterGrid">
+                        <!-- Trimester cards will be populated by JavaScript -->
                     </div>
                 </div>
-                <div class="pdf-content">
-                    <iframe id="pdfFrame" src="" frameborder="0"></iframe>
+            </section>
+
+            <!-- PDF View -->
+            <section id="pdfView" class="view">
+                <div class="pdf-container">
+                    <div class="pdf-header">
+                        <h3 id="pdfTitle"></h3>
+                        <div class="pdf-actions">
+                            <button class="btn btn--primary" id="downloadBtn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                Download PDF
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="pdf-viewer" id="pdfViewer">
+                        <div class="pdf-placeholder">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                            <p>PDF Preview</p>
+                            <p class="pdf-placeholder__note">Click "Download PDF" to view the complete question paper</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+            <div class="footer__content">
+                <div class="footer__section">
                     <h4>UIU Data Science Question Bank</h4>
-                    <p>A comprehensive collection of previous trimester questions for UIU Data Science program.</p>
+                    <p>Maintained by UIU Scholar's Squad and Data Science Students</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">All Courses</a></li>
-                        <li><a href="#contribute">Contribute</a></li>
-                        <li><a href="https://github.com" target="_blank">GitHub Repository</a></li>
-                    </ul>
+                <div class="footer__section">
+                    <h4>Contribute</h4>
+                    <p>Help us grow this collection by contributing question papers</p>
+                    <a href="https://github.com/nurulalamador/UIUQuestionBank" target="_blank" class="btn btn--outline btn--sm">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                        GitHub
+                    </a>
                 </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#guidelines">Contribution Guidelines</a></li>
-                    </ul>
+                <div class="footer__section">
+                    <h4>Contact</h4>
+                    <p>datascience@uiu.ac.bd</p>
+                    <p class="footer__version">Version 1.0 • Last updated: July 16, 2024</p>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 UIU Data Science Question Bank. Made with ❤️ for students.</p>
             </div>
         </div>
     </footer>

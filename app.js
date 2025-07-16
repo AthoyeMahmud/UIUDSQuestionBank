@@ -1,608 +1,559 @@
-// Course data
-const coursesData = {
-  "courses": [
-    {
-      "id": "DS1501",
-      "title": "Programming for Data Science",
-      "code": "DS 1501",
-      "abbr": "Programming",
-      "trimester": 1,
-      "credits": 3,
-      "description": "Introduction to programming concepts for data science applications",
-      "colorOne": "rgb(69, 179, 224)",
-      "colorTwo": "rgb(102, 51, 153)",
-      "css": "linear-gradient(109.6deg, rgb(69, 179, 224) 11.2%, rgb(102, 51, 153) 100.2%)",
-      "midterm": [
-        {"code": "241", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2024"},
-        {"code": "242", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2024"},
-        {"code": "243", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Fall 2024"}
-      ],
-      "final": [
-        {"code": "241", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2024"},
-        {"code": "242", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2024"}
-      ]
-    },
-    {
-      "id": "DS1502",
-      "title": "Programming for Data Science Laboratory",
-      "code": "DS 1502",
-      "abbr": "Programming Lab",
-      "trimester": 1,
-      "credits": 1,
-      "description": "Hands-on programming laboratory for data science",
-      "colorOne": "rgb(255, 7, 7)",
-      "colorTwo": "rgb(255, 255, 5)",
-      "css": "linear-gradient(113.9deg, rgb(255, 7, 7) -4.5%, rgb(255, 255, 5) 98.8%)",
-      "midterm": [
-        {"code": "241", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2024"}
-      ],
-      "final": [
-        {"code": "241", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2024"},
-        {"code": "242", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2024"}
-      ]
-    },
-    {
-      "id": "DS2101",
-      "title": "Statistics for Data Science",
-      "code": "DS 2101",
-      "abbr": "Statistics",
-      "trimester": 2,
-      "credits": 3,
-      "description": "Statistical foundations for data science applications",
-      "colorOne": "rgb(102, 64, 123)",
-      "colorTwo": "rgb(251, 168, 214)",
-      "css": "linear-gradient(89.9deg, rgb(102, 64, 123) 0%, rgb(252, 41, 119) 100%, rgb(251, 168, 214) 100.1%)",
-      "midterm": [
-        {"code": "231", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2023"},
-        {"code": "241", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2024"}
-      ],
-      "final": [
-        {"code": "231", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2023"},
-        {"code": "241", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2024"}
-      ]
-    },
-    {
-      "id": "DS3101",
-      "title": "Stochastic Processes for Data Science",
-      "code": "DS 3101",
-      "abbr": "Stochastic",
-      "trimester": 5,
-      "credits": 3,
-      "description": "Random variables, Markov chains, and queuing theory for data science",
-      "colorOne": "#fda34b",
-      "colorTwo": "#7046aa",
-      "css": "linear-gradient(-15deg, #fda34b 0%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 100%)",
-      "midterm": [
-        {"code": "221", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2022"},
-        {"code": "231", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2023"},
-        {"code": "241", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2024"}
-      ],
-      "final": [
-        {"code": "221", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2022"},
-        {"code": "231", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Spring 2023"}
-      ]
-    },
-    {
-      "id": "DS3521",
-      "title": "Data Visualization and Exploration",
-      "code": "DS 3521",
-      "abbr": "Data Viz",
-      "trimester": 6,
-      "credits": 3,
-      "description": "Methods for visualizing and exploring high-dimensional data",
-      "colorOne": "rgb(12, 85, 141)",
-      "colorTwo": "rgb(249, 140, 69)",
-      "css": "radial-gradient(circle at right, rgb(12, 85, 141) 15%, rgb(205, 181, 93) 40%, rgb(249, 140, 69) 60%, rgb(12, 73, 116) 85%)",
-      "midterm": [
-        {"code": "232", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2023"},
-        {"code": "242", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2024"}
-      ],
-      "final": [
-        {"code": "232", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2023"}
-      ]
-    },
-    {
-      "id": "DS4522",
-      "title": "Machine Learning",
-      "code": "DS 4522",
-      "abbr": "ML",
-      "trimester": 7,
-      "credits": 3,
-      "description": "Introduction to machine learning algorithms and applications",
-      "colorOne": "rgb(241, 78, 163)",
-      "colorTwo": "rgb(26, 243, 158)",
-      "css": "radial-gradient(circle at 1.5% 2.8%, rgb(241, 78, 163) 30%, rgb(26, 243, 158) 80%, rgb(69, 237, 244) 95%)",
-      "midterm": [
-        {"code": "223", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Fall 2022"},
-        {"code": "233", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Fall 2023"},
-        {"code": "243", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Fall 2024"}
-      ],
-      "final": [
-        {"code": "223", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Fall 2022"},
-        {"code": "233", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Fall 2023"}
-      ]
-    },
-    {
-      "id": "DS4523",
-      "title": "Simulation and Modeling",
-      "code": "DS 4523",
-      "abbr": "Simulation",
-      "trimester": 8,
-      "credits": 3,
-      "description": "Simulation methods and model building for data science",
-      "colorOne": "#4fb576",
-      "colorTwo": "#4c7788",
-      "css": "linear-gradient(10deg, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%)",
-      "midterm": [
-        {"code": "234", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2023"},
-        {"code": "244", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2024"}
-      ],
-      "final": [
-        {"code": "234", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2023"}
-      ]
-    },
-    {
-      "id": "DS4891",
-      "title": "Data Mining",
-      "code": "DS 4891",
-      "abbr": "Data Mining",
-      "trimester": 8,
-      "credits": 3,
-      "description": "Data mining concepts, methodologies, and algorithms",
-      "colorOne": "#0000DA",
-      "colorTwo": "#FF0000",
-      "css": "linear-gradient(55deg, hsl(240deg 100% 43%) 0%, hsl(329deg 100% 46%) 50%, hsl(0deg 100% 50%) 100%)",
-      "midterm": [
-        {"code": "234", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2023"},
-        {"code": "244", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2024"}
-      ],
-      "final": [
-        {"code": "234", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2023"},
-        {"code": "244", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2024"}
-      ]
-    },
-    {
-      "id": "DS4817",
-      "title": "Big Data Analytics",
-      "code": "DS 4817",
-      "abbr": "Big Data",
-      "trimester": 9,
-      "credits": 3,
-      "description": "Introduction to Big Data characteristics and processing frameworks",
-      "colorOne": "#580864",
-      "colorTwo": "#90eef3",
-      "css": "linear-gradient(to right top, #580864, #523083, #454c9e, #3166b5, #137fc6, #0192d1, #17a5d9, #35b8e0, #54cae6, #72dcec, #90eef3, #aefffa)",
-      "midterm": [
-        {"code": "235", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Fall 2023"},
-        {"code": "245", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Fall 2024"}
-      ],
-      "final": [
-        {"code": "235", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Fall 2023"}
-      ]
-    },
-    {
-      "id": "DS4217",
-      "title": "Data Science Ethics and Privacy",
-      "code": "DS 4217",
-      "abbr": "Ethics",
-      "trimester": 10,
-      "credits": 3,
-      "description": "Ethical issues and privacy concerns in data science",
-      "colorOne": "#05c9fa",
-      "colorTwo": "#e4f61e",
-      "css": "linear-gradient(90deg, hsla(192, 96%, 50%, 1) 0%, hsla(65, 92%, 54%, 1) 100%)",
-      "midterm": [
-        {"code": "236", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2023"},
-        {"code": "246", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2024"}
-      ],
-      "final": [
-        {"code": "236", "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "semester": "Summer 2023"}
-      ]
+// UIU Data Science Question Bank - Main Application
+class UIUQuestionBank {
+    constructor() {
+        this.currentView = 'home';
+        this.currentCourse = null;
+        this.currentExamType = null;
+        this.currentTrimester = null;
+        this.searchQuery = '';
+        
+        // Application data
+        this.data = {
+            "courses": [
+                {
+                    "id": "DS1501",
+                    "title": "Programming for Data Science",
+                    "code": "DS 1501",
+                    "credits": 3,
+                    "trimester": 1,
+                    "description": "Introduction to programming concepts for data science applications",
+                    "exams": {
+                        "midterm": {
+                            "spring2023": { "available": true, "filename": "DS1501_midterm_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "DS1501_midterm_fall2023.pdf" },
+                            "spring2024": { "available": true, "filename": "DS1501_midterm_spring2024.pdf" }
+                        },
+                        "final": {
+                            "spring2023": { "available": true, "filename": "DS1501_final_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "DS1501_final_fall2023.pdf" }
+                        },
+                        "classtest": {
+                            "spring2023": { "available": true, "filename": "DS1501_classtest_spring2023.pdf" }
+                        }
+                    }
+                },
+                {
+                    "id": "DS1115",
+                    "title": "Object Oriented Programming for Data Science",
+                    "code": "DS 1115",
+                    "credits": 3,
+                    "trimester": 2,
+                    "description": "Object-oriented programming concepts applied to data science",
+                    "exams": {
+                        "midterm": {
+                            "spring2023": { "available": true, "filename": "DS1115_midterm_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "DS1115_midterm_fall2023.pdf" }
+                        },
+                        "final": {
+                            "spring2023": { "available": true, "filename": "DS1115_final_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "DS1115_final_fall2023.pdf" }
+                        }
+                    }
+                },
+                {
+                    "id": "DS1101",
+                    "title": "Fundamentals of Data Science",
+                    "code": "DS 1101",
+                    "credits": 3,
+                    "trimester": 3,
+                    "description": "Core concepts and principles of data science",
+                    "exams": {
+                        "midterm": {
+                            "spring2023": { "available": true, "filename": "DS1101_midterm_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "DS1101_midterm_fall2023.pdf" }
+                        },
+                        "final": {
+                            "spring2023": { "available": true, "filename": "DS1101_final_spring2023.pdf" }
+                        }
+                    }
+                },
+                {
+                    "id": "DS3885",
+                    "title": "Data Wrangling",
+                    "code": "DS 3885",
+                    "credits": 3,
+                    "trimester": 5,
+                    "description": "Data cleaning, transformation, and preprocessing techniques",
+                    "exams": {
+                        "midterm": {
+                            "fall2023": { "available": true, "filename": "DS3885_midterm_fall2023.pdf" }
+                        },
+                        "final": {
+                            "fall2023": { "available": true, "filename": "DS3885_final_fall2023.pdf" }
+                        }
+                    }
+                },
+                {
+                    "id": "MATH1151",
+                    "title": "Fundamental Calculus",
+                    "code": "MATH 1151",
+                    "credits": 3,
+                    "trimester": 2,
+                    "description": "Differential and integral calculus foundations",
+                    "exams": {
+                        "midterm": {
+                            "spring2023": { "available": true, "filename": "MATH1151_midterm_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "MATH1151_midterm_fall2023.pdf" }
+                        },
+                        "final": {
+                            "spring2023": { "available": true, "filename": "MATH1151_final_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "MATH1151_final_fall2023.pdf" }
+                        }
+                    }
+                },
+                {
+                    "id": "MATH2107",
+                    "title": "Linear Algebra",
+                    "code": "MATH 2107",
+                    "credits": 3,
+                    "trimester": 3,
+                    "description": "Matrix operations, vector spaces, and linear transformations",
+                    "exams": {
+                        "midterm": {
+                            "spring2023": { "available": true, "filename": "MATH2107_midterm_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "MATH2107_midterm_fall2023.pdf" }
+                        },
+                        "final": {
+                            "spring2023": { "available": true, "filename": "MATH2107_final_spring2023.pdf" }
+                        }
+                    }
+                },
+                {
+                    "id": "CSE2215",
+                    "title": "Data Structures and Algorithms I",
+                    "code": "CSE 2215",
+                    "credits": 3,
+                    "trimester": 4,
+                    "description": "Fundamental data structures and algorithmic thinking",
+                    "exams": {
+                        "midterm": {
+                            "spring2023": { "available": true, "filename": "CSE2215_midterm_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "CSE2215_midterm_fall2023.pdf" }
+                        },
+                        "final": {
+                            "spring2023": { "available": true, "filename": "CSE2215_final_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "CSE2215_final_fall2023.pdf" }
+                        }
+                    }
+                },
+                {
+                    "id": "CSE2213",
+                    "title": "Discrete Mathematics",
+                    "code": "CSE 2213",
+                    "credits": 3,
+                    "trimester": 4,
+                    "description": "Mathematical foundations for computer science",
+                    "exams": {
+                        "midterm": {
+                            "spring2023": { "available": true, "filename": "CSE2213_midterm_spring2023.pdf" },
+                            "fall2023": { "available": true, "filename": "CSE2213_midterm_fall2023.pdf" }
+                        },
+                        "final": {
+                            "spring2023": { "available": true, "filename": "CSE2213_final_spring2023.pdf" }
+                        }
+                    }
+                }
+            ],
+            "trimesters": [
+                { "id": "spring2023", "name": "Spring 2023", "year": 2023, "season": "Spring" },
+                { "id": "fall2023", "name": "Fall 2023", "year": 2023, "season": "Fall" },
+                { "id": "spring2024", "name": "Spring 2024", "year": 2024, "season": "Spring" },
+                { "id": "fall2024", "name": "Fall 2024", "year": 2024, "season": "Fall" }
+            ],
+            "examTypes": [
+                { "id": "midterm", "name": "Midterm", "description": "Mid-semester examinations" },
+                { "id": "final", "name": "Final", "description": "End-semester examinations" },
+                { "id": "classtest", "name": "Class Test", "description": "Regular class assessments" }
+            ]
+        };
+
+        this.init();
     }
-  ],
-  "metadata": {
-    "lastUpdated": "2024-12-30",
-    "totalCourses": 10,
-    "totalQuestions": 45,
-    "semesterCodes": {
-      "241": "Spring 2024",
-      "242": "Summer 2024", 
-      "243": "Fall 2024",
-      "231": "Spring 2023",
-      "232": "Summer 2023",
-      "233": "Fall 2023",
-      "221": "Spring 2022",
-      "222": "Summer 2022",
-      "223": "Fall 2022"
+
+    init() {
+        this.setupEventListeners();
+        this.renderHomeView();
+        this.updateStats();
     }
-  }
-};
 
-// Global state
-let currentView = 'home';
-let currentCourse = null;
-let filteredCourses = [...coursesData.courses];
-let currentPdfUrl = null;
+    setupEventListeners() {
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                this.searchQuery = e.target.value.toLowerCase();
+                this.renderCourseGrid();
+            });
+        }
 
-// DOM elements
-const elements = {
-  navToggle: document.getElementById('navToggle'),
-  navMenu: document.getElementById('navMenu'),
-  searchInput: document.getElementById('searchInput'),
-  trimesterFilter: document.getElementById('trimesterFilter'),
-  coursesGrid: document.getElementById('coursesGrid'),
-  totalCourses: document.getElementById('totalCourses'),
-  totalQuestions: document.getElementById('totalQuestions'),
-  lastUpdated: document.getElementById('lastUpdated'),
-  
-  // Views
-  homeView: document.getElementById('home-view'),
-  courseView: document.getElementById('course-view'),
-  pdfView: document.getElementById('pdf-view'),
-  
-  // Course detail elements
-  courseBreadcrumb: document.getElementById('courseBreadcrumb'),
-  courseTitle: document.getElementById('courseTitle'),
-  courseCode: document.getElementById('courseCode'),
-  courseDescription: document.getElementById('courseDescription'),
-  courseCredits: document.getElementById('courseCredits'),
-  courseTrimester: document.getElementById('courseTrimester'),
-  midtermPapers: document.getElementById('midtermPapers'),
-  finalPapers: document.getElementById('finalPapers'),
-  
-  // PDF viewer elements
-  pdfFrame: document.getElementById('pdfFrame'),
-  pdfTitle: document.getElementById('pdfTitle'),
-  backToCourse: document.getElementById('backToCourse'),
-  downloadPdf: document.getElementById('downloadPdf')
-};
+        // Breadcrumb navigation - use event delegation
+        const breadcrumbContainer = document.getElementById('breadcrumb');
+        if (breadcrumbContainer) {
+            breadcrumbContainer.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (e.target.classList.contains('breadcrumb__link')) {
+                    const level = e.target.dataset.level;
+                    this.navigateToLevel(level);
+                }
+            });
+        }
 
-// Initialize app
-document.addEventListener('DOMContentLoaded', function() {
-  setupEventListeners();
-  updateStats();
-  renderCourses();
-  setupNavigation();
-});
+        // PDF download
+        const downloadBtn = document.getElementById('downloadBtn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', () => {
+                this.downloadPDF();
+            });
+        }
 
-// Event listeners
-function setupEventListeners() {
-  // Navigation
-  elements.navToggle.addEventListener('click', toggleMobileNav);
-  
-  // Search and filter
-  elements.searchInput.addEventListener('input', debounce(handleSearch, 300));
-  elements.trimesterFilter.addEventListener('change', handleFilter);
-  
-  // Course detail navigation
-  elements.backToCourse.addEventListener('click', () => showView('course'));
-  elements.downloadPdf.addEventListener('click', downloadCurrentPdf);
-  
-  // Navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', handleNavigation);
-  });
-}
+        // Course grid navigation - use event delegation
+        const courseGrid = document.getElementById('courseGrid');
+        if (courseGrid) {
+            courseGrid.addEventListener('click', (e) => {
+                const courseCard = e.target.closest('.course-card');
+                if (courseCard) {
+                    const courseId = courseCard.dataset.courseId;
+                    this.showCourseView(courseId);
+                }
+            });
+        }
 
-function setupNavigation() {
-  // Handle browser back/forward
-  window.addEventListener('popstate', function(e) {
-    if (e.state) {
-      if (e.state.view === 'course' && e.state.courseId) {
-        showCourseDetail(e.state.courseId);
-      } else if (e.state.view === 'pdf') {
-        // Handle PDF view state if needed
-      } else {
-        showView('home');
-      }
+        // Exam type grid navigation - use event delegation
+        const examTypeGrid = document.getElementById('examTypeGrid');
+        if (examTypeGrid) {
+            examTypeGrid.addEventListener('click', (e) => {
+                const examCard = e.target.closest('.exam-type-card');
+                if (examCard && !examCard.classList.contains('exam-type-card--disabled')) {
+                    const examType = examCard.dataset.examType;
+                    this.showTrimesterView(this.currentCourse, examType);
+                }
+            });
+        }
+
+        // Trimester grid navigation - use event delegation
+        const trimesterGrid = document.getElementById('trimesterGrid');
+        if (trimesterGrid) {
+            trimesterGrid.addEventListener('click', (e) => {
+                const trimesterCard = e.target.closest('.trimester-card');
+                if (trimesterCard) {
+                    const trimesterId = trimesterCard.dataset.trimesterId;
+                    this.showPDFView(this.currentCourse, this.currentExamType, trimesterId);
+                }
+            });
+        }
     }
-  });
-}
 
-function toggleMobileNav() {
-  elements.navMenu.classList.toggle('active');
-}
+    navigateToLevel(level) {
+        switch (level) {
+            case 'home':
+                this.renderHomeView();
+                break;
+            case 'course':
+                if (this.currentCourse) {
+                    this.showCourseView(this.currentCourse);
+                }
+                break;
+            case 'examType':
+                if (this.currentCourse && this.currentExamType) {
+                    this.showTrimesterView(this.currentCourse, this.currentExamType);
+                }
+                break;
+            default:
+                this.renderHomeView();
+        }
+    }
 
-function handleNavigation(e) {
-  e.preventDefault();
-  const href = e.target.getAttribute('href');
-  
-  if (href === '#home') {
-    showView('home');
-    history.pushState({view: 'home'}, '', '#home');
-  }
-}
+    showView(viewName) {
+        // Hide all views
+        document.querySelectorAll('.view').forEach(view => {
+            view.classList.remove('view--active');
+        });
 
-function handleSearch() {
-  const searchTerm = elements.searchInput.value.toLowerCase();
-  filterCourses(searchTerm, elements.trimesterFilter.value);
-}
+        // Show target view
+        const targetView = document.getElementById(viewName + 'View');
+        if (targetView) {
+            targetView.classList.add('view--active');
+        }
+        this.currentView = viewName;
+    }
 
-function handleFilter() {
-  const trimesterFilter = elements.trimesterFilter.value;
-  const searchTerm = elements.searchInput.value.toLowerCase();
-  filterCourses(searchTerm, trimesterFilter);
-}
+    updateBreadcrumb(levels) {
+        const breadcrumbList = document.querySelector('.breadcrumb__list');
+        if (!breadcrumbList) return;
 
-function filterCourses(searchTerm, trimesterFilter) {
-  filteredCourses = coursesData.courses.filter(course => {
-    const matchesSearch = !searchTerm || 
-      course.title.toLowerCase().includes(searchTerm) ||
-      course.code.toLowerCase().includes(searchTerm) ||
-      course.abbr.toLowerCase().includes(searchTerm);
-    
-    const matchesTrimester = !trimesterFilter || 
-      course.trimester.toString() === trimesterFilter;
-    
-    return matchesSearch && matchesTrimester;
-  });
-  
-  renderCourses();
-}
+        breadcrumbList.innerHTML = '';
 
-function renderCourses() {
-  if (filteredCourses.length === 0) {
-    elements.coursesGrid.innerHTML = `
-      <div class="no-results">
-        <i class="fas fa-search"></i>
-        <h3>No courses found</h3>
-        <p>Try adjusting your search criteria or filters.</p>
-      </div>
-    `;
-    return;
-  }
-  
-  elements.coursesGrid.innerHTML = filteredCourses.map(course => {
-    const midtermCount = course.midterm.length;
-    const finalCount = course.final.length;
-    
-    return `
-      <div class="course-card" onclick="showCourseDetail('${course.id}')" tabindex="0" onkeydown="handleCardKeydown(event, '${course.id}')">
-        <div class="course-card-header" style="background: ${course.css};">
-          <div class="course-card-content">
-            <h3>${course.title}</h3>
-            <div class="course-code">${course.code}</div>
-            <div class="course-abbr">${course.abbr}</div>
-          </div>
-        </div>
-        <div class="course-card-body">
-          <p class="course-description">${course.description}</p>
-          <div class="course-meta">
-            <div class="meta-item">
-              <span class="meta-label">Credits:</span>
-              <span class="meta-value">${course.credits}</span>
+        levels.forEach((level, index) => {
+            const li = document.createElement('li');
+            li.className = 'breadcrumb__item';
+            
+            const link = document.createElement('a');
+            link.className = 'breadcrumb__link' + (index === levels.length - 1 ? ' breadcrumb__link--active' : '');
+            link.href = '#';
+            link.textContent = level.text;
+            link.dataset.level = level.level;
+            
+            li.appendChild(link);
+            breadcrumbList.appendChild(li);
+        });
+    }
+
+    renderHomeView() {
+        this.currentCourse = null;
+        this.currentExamType = null;
+        this.currentTrimester = null;
+        
+        this.showView('home');
+        this.updateBreadcrumb([{ text: 'Home', level: 'home' }]);
+        this.renderCourseGrid();
+    }
+
+    renderCourseGrid() {
+        const courseGrid = document.getElementById('courseGrid');
+        if (!courseGrid) return;
+
+        const filteredCourses = this.data.courses.filter(course => {
+            if (!this.searchQuery) return true;
+            return course.title.toLowerCase().includes(this.searchQuery) ||
+                   course.code.toLowerCase().includes(this.searchQuery) ||
+                   course.description.toLowerCase().includes(this.searchQuery);
+        });
+
+        if (filteredCourses.length === 0) {
+            courseGrid.innerHTML = `
+                <div class="empty-state">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <h3>No courses found</h3>
+                    <p>Try adjusting your search query</p>
+                </div>
+            `;
+            return;
+        }
+
+        courseGrid.innerHTML = filteredCourses.map(course => `
+            <div class="course-card" data-course-id="${course.id}">
+                <div class="course-card__header">
+                    <div class="course-card__code">${course.code}</div>
+                    <h3 class="course-card__title">${course.title}</h3>
+                    <p class="course-card__description">${course.description}</p>
+                </div>
+                <div class="course-card__meta">
+                    <span class="course-card__badge">${course.credits} Credits</span>
+                    <span class="course-card__badge">Trimester ${course.trimester}</span>
+                </div>
             </div>
-            <div class="meta-item">
-              <span class="meta-label">Trimester:</span>
-              <span class="meta-value">${course.trimester}</span>
-            </div>
-          </div>
-          <div class="course-stats">
-            <div class="stat">
-              <div class="stat-count">${midtermCount}</div>
-              <div class="stat-text">Midterm</div>
-            </div>
-            <div class="stat">
-              <div class="stat-count">${finalCount}</div>
-              <div class="stat-text">Final</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-  }).join('');
-}
-
-function handleCardKeydown(event, courseId) {
-  if (event.key === 'Enter' || event.key === ' ') {
-    event.preventDefault();
-    showCourseDetail(courseId);
-  }
-}
-
-function showCourseDetail(courseId) {
-  currentCourse = coursesData.courses.find(c => c.id === courseId);
-  if (!currentCourse) return;
-  
-  // Update breadcrumb
-  elements.courseBreadcrumb.textContent = currentCourse.title;
-  
-  // Update course info
-  elements.courseTitle.textContent = currentCourse.title;
-  elements.courseCode.textContent = currentCourse.code;
-  elements.courseDescription.textContent = currentCourse.description;
-  elements.courseCredits.textContent = currentCourse.credits;
-  elements.courseTrimester.textContent = currentCourse.trimester;
-  
-  // Render papers
-  renderPapers(elements.midtermPapers, currentCourse.midterm, 'midterm');
-  renderPapers(elements.finalPapers, currentCourse.final, 'final');
-  
-  showView('course');
-  history.pushState({view: 'course', courseId: courseId}, '', `#course/${courseId}`);
-}
-
-function renderPapers(container, papers, type) {
-  if (papers.length === 0) {
-    container.innerHTML = '<p class="no-papers">No papers available</p>';
-    return;
-  }
-  
-  container.innerHTML = papers.map(paper => `
-    <div class="paper-item">
-      <div class="paper-info">
-        <div class="paper-semester">${paper.semester}</div>
-        <div class="paper-code">Code: ${paper.code}</div>
-      </div>
-      <div class="paper-actions">
-        <button class="btn-icon" onclick="viewPdf('${paper.url}', '${currentCourse.code} - ${paper.semester} ${type}')" title="View PDF">
-          <i class="fas fa-eye"></i>
-        </button>
-        <button class="btn-icon" onclick="downloadPdf('${paper.url}', '${currentCourse.code}_${type}_${paper.code}.pdf')" title="Download PDF">
-          <i class="fas fa-download"></i>
-        </button>
-      </div>
-    </div>
-  `).join('');
-}
-
-function viewPdf(url, title) {
-  currentPdfUrl = url;
-  elements.pdfTitle.textContent = title;
-  
-  // Create PDF viewer URL with embedded viewer
-  const pdfViewerUrl = `https://docs.google.com/gview?url=${encodeURIComponent(url)}&embedded=true`;
-  elements.pdfFrame.src = pdfViewerUrl;
-  
-  showView('pdf');
-}
-
-function downloadPdf(url, filename) {
-  // Create temporary link for download
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = filename || 'question_paper.pdf';
-  link.target = '_blank';
-  link.style.display = 'none';
-  
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-function downloadCurrentPdf() {
-  if (currentPdfUrl) {
-    const filename = elements.pdfTitle.textContent.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.pdf';
-    downloadPdf(currentPdfUrl, filename);
-  }
-}
-
-function showView(viewName) {
-  // Hide all views
-  document.querySelectorAll('.view').forEach(view => {
-    view.classList.remove('active');
-  });
-  
-  // Show selected view
-  const targetView = document.getElementById(viewName + '-view');
-  if (targetView) {
-    targetView.classList.add('active');
-    currentView = viewName;
-  }
-  
-  // Close mobile nav
-  elements.navMenu.classList.remove('active');
-}
-
-function updateStats() {
-  elements.totalCourses.textContent = coursesData.metadata.totalCourses;
-  elements.totalQuestions.textContent = coursesData.metadata.totalQuestions;
-  elements.lastUpdated.textContent = 'Dec 2024';
-}
-
-// Utility functions
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-// Keyboard navigation
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    if (currentView === 'pdf') {
-      showView('course');
-    } else if (currentView === 'course') {
-      showView('home');
+        `).join('');
     }
-  }
-});
 
-// Handle clicks on breadcrumb links
-document.addEventListener('click', function(e) {
-  if (e.target.classList.contains('breadcrumb-link')) {
-    e.preventDefault();
-    const href = e.target.getAttribute('href');
-    if (href === '#home') {
-      showView('home');
-      history.pushState({view: 'home'}, '', '#home');
+    showCourseView(courseId) {
+        this.currentCourse = courseId;
+        const course = this.data.courses.find(c => c.id === courseId);
+        
+        if (!course) return;
+
+        this.showView('course');
+        this.updateBreadcrumb([
+            { text: 'Home', level: 'home' },
+            { text: course.code, level: 'course' }
+        ]);
+
+        // Update course details
+        const courseTitle = document.getElementById('courseTitle');
+        const courseDescription = document.getElementById('courseDescription');
+        const courseCredits = document.getElementById('courseCredits');
+        const courseTrimester = document.getElementById('courseTrimester');
+
+        if (courseTitle) courseTitle.textContent = `${course.code} - ${course.title}`;
+        if (courseDescription) courseDescription.textContent = course.description;
+        if (courseCredits) courseCredits.textContent = `${course.credits} Credits`;
+        if (courseTrimester) courseTrimester.textContent = `Trimester ${course.trimester}`;
+
+        // Render exam types
+        this.renderExamTypes(course);
     }
-  }
-});
 
-// Enhanced error handling for PDF loading
-elements.pdfFrame.addEventListener('load', function() {
-  // PDF loaded successfully
-  console.log('PDF loaded successfully');
-});
-
-elements.pdfFrame.addEventListener('error', function() {
-  // Show error message in iframe
-  elements.pdfFrame.style.display = 'none';
-  const errorDiv = document.createElement('div');
-  errorDiv.innerHTML = `
-    <div style="display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column; color: #666; padding: 20px; text-align: center;">
-      <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem; color: #ff6b6b;"></i>
-      <h3>PDF Loading Error</h3>
-      <p>The PDF file could not be loaded in the viewer.</p>
-      <p>Please try downloading the file instead.</p>
-      <button class="btn btn--primary" onclick="downloadCurrentPdf()" style="margin-top: 1rem;">
-        <i class="fas fa-download"></i> Download PDF
-      </button>
-    </div>
-  `;
-  elements.pdfFrame.parentNode.appendChild(errorDiv);
-});
-
-// Initialize view based on URL hash
-window.addEventListener('load', function() {
-  const hash = window.location.hash;
-  if (hash.startsWith('#course/')) {
-    const courseId = hash.substring(8);
-    showCourseDetail(courseId);
-  } else if (hash === '#home' || !hash) {
-    showView('home');
-  }
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
+    renderExamTypes(course) {
+        const examTypeGrid = document.getElementById('examTypeGrid');
+        if (!examTypeGrid) return;
+        
+        examTypeGrid.innerHTML = this.data.examTypes.map(examType => {
+            const examCount = course.exams[examType.id] ? Object.keys(course.exams[examType.id]).length : 0;
+            const isDisabled = examCount === 0;
+            
+            return `
+                <div class="exam-type-card ${isDisabled ? 'exam-type-card--disabled' : ''}" 
+                     data-exam-type="${examType.id}">
+                    <h4 class="exam-type-card__title">${examType.name}</h4>
+                    <p class="exam-type-card__description">${examType.description}</p>
+                    <span class="exam-type-card__count">${examCount} Available</span>
+                </div>
+            `;
+        }).join('');
     }
-  });
-});
 
-// Add loading state for PDF viewer
-function showPdfLoading() {
-  elements.pdfFrame.style.display = 'none';
-  const loadingDiv = document.createElement('div');
-  loadingDiv.className = 'pdf-loading';
-  loadingDiv.innerHTML = `
-    <div style="display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column; color: #666;">
-      <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-      <p>Loading PDF...</p>
-    </div>
-  `;
-  elements.pdfFrame.parentNode.appendChild(loadingDiv);
+    showTrimesterView(courseId, examType) {
+        this.currentCourse = courseId;
+        this.currentExamType = examType;
+        
+        const course = this.data.courses.find(c => c.id === courseId);
+        const examTypeData = this.data.examTypes.find(et => et.id === examType);
+        
+        if (!course || !examTypeData) return;
+
+        this.showView('trimester');
+        this.updateBreadcrumb([
+            { text: 'Home', level: 'home' },
+            { text: course.code, level: 'course' },
+            { text: examTypeData.name, level: 'examType' }
+        ]);
+
+        // Render available trimesters
+        this.renderTrimesters(course, examType);
+    }
+
+    renderTrimesters(course, examType) {
+        const trimesterGrid = document.getElementById('trimesterGrid');
+        if (!trimesterGrid) return;
+
+        const availableTrimesters = course.exams[examType] || {};
+        
+        const trimesterCards = this.data.trimesters
+            .filter(trimester => availableTrimesters[trimester.id])
+            .map(trimester => `
+                <div class="trimester-card" data-trimester-id="${trimester.id}">
+                    <div class="trimester-card__season">${trimester.season}</div>
+                    <div class="trimester-card__year">${trimester.year}</div>
+                </div>
+            `).join('');
+
+        if (trimesterCards) {
+            trimesterGrid.innerHTML = trimesterCards;
+        } else {
+            trimesterGrid.innerHTML = `
+                <div class="empty-state">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <h3>No question papers available</h3>
+                    <p>Check back later for updates</p>
+                </div>
+            `;
+        }
+    }
+
+    showPDFView(courseId, examType, trimesterId) {
+        this.currentCourse = courseId;
+        this.currentExamType = examType;
+        this.currentTrimester = trimesterId;
+        
+        const course = this.data.courses.find(c => c.id === courseId);
+        const examTypeData = this.data.examTypes.find(et => et.id === examType);
+        const trimesterData = this.data.trimesters.find(t => t.id === trimesterId);
+        
+        if (!course || !examTypeData || !trimesterData) return;
+
+        this.showView('pdf');
+        this.updateBreadcrumb([
+            { text: 'Home', level: 'home' },
+            { text: course.code, level: 'course' },
+            { text: examTypeData.name, level: 'examType' },
+            { text: trimesterData.name, level: 'pdf' }
+        ]);
+
+        // Update PDF view
+        const pdfTitle = document.getElementById('pdfTitle');
+        if (pdfTitle) {
+            pdfTitle.textContent = `${course.code} - ${examTypeData.name} - ${trimesterData.name}`;
+        }
+    }
+
+    downloadPDF() {
+        if (!this.currentCourse || !this.currentExamType || !this.currentTrimester) {
+            alert('No PDF selected for download');
+            return;
+        }
+        
+        const course = this.data.courses.find(c => c.id === this.currentCourse);
+        if (!course) {
+            alert('Course not found');
+            return;
+        }
+
+        const examData = course.exams[this.currentExamType];
+        if (!examData) {
+            alert('Exam type not found');
+            return;
+        }
+
+        const trimesterData = examData[this.currentTrimester];
+        if (!trimesterData || !trimesterData.available) {
+            alert('PDF not available for download');
+            return;
+        }
+
+        // In a real implementation, this would download the actual PDF
+        // For now, we'll show a message and create a sample download
+        const filename = trimesterData.filename;
+        
+        // Create a mock download link
+        const link = document.createElement('a');
+        link.href = '#';
+        link.download = filename;
+        link.textContent = 'Download PDF';
+        
+        // Show success message
+        alert(`PDF "${filename}" would be downloaded in a real implementation.\n\nIn production, this would link to the actual PDF file stored in your repository.`);
+        
+        console.log(`Mock download: ${filename}`);
+    }
+
+    updateStats() {
+        // Update course count
+        const courseCount = document.getElementById('courseCount');
+        if (courseCount) {
+            courseCount.textContent = this.data.courses.length;
+        }
+        
+        // Update trimester count
+        const trimesterCount = document.getElementById('trimesterCount');
+        if (trimesterCount) {
+            trimesterCount.textContent = this.data.trimesters.length;
+        }
+        
+        // Update exam count
+        let totalExams = 0;
+        this.data.courses.forEach(course => {
+            Object.values(course.exams).forEach(examType => {
+                totalExams += Object.keys(examType).length;
+            });
+        });
+        
+        const examCount = document.getElementById('examCount');
+        if (examCount) {
+            examCount.textContent = totalExams;
+        }
+    }
 }
 
-// Clean up loading states
-function hidePdfLoading() {
-  const loadingDiv = document.querySelector('.pdf-loading');
-  if (loadingDiv) {
-    loadingDiv.remove();
-  }
-  elements.pdfFrame.style.display = 'block';
+// Initialize the application when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.uiuQuestionBank = new UIUQuestionBank();
+});
+
+// Service Worker registration for offline support (optional)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+                console.log('SW registration failed: ', registrationError);
+            });
+    });
 }
