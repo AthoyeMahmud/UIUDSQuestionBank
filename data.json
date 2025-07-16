@@ -1,5 +1,19 @@
 [
     {
+        "id": "DS1501",
+        "title": "Programming for Data Science",
+        "code": "DS 1501",
+        "abbr": "PDS",
+        "credits": 3,
+        "trimester": 1,
+        "description": "Introduction to programming concepts and data science applications",
+        "mid": [],
+        "final": [
+            { "url": "questions/DS1501/final/DS1501_Final_233.pdf" }
+        ],
+        "classtest": []
+    },
+    {
         "id": "BDS1201",
         "title": "History of the Emergence of Bangladesh",
         "code": "BDS 1201",
@@ -36,6 +50,22 @@
             { "url": "questions/ENG1011/final/ENG1011_Final_241.pdf" }
         ],
         "classtest": []
+    },
+    {
+        "id": "DS1115",
+        "title": "Object Oriented Programming for Data Science",
+        "code": "DS 1115",
+        "abbr": "OOP",
+        "credits": 3,
+        "trimester": 2,
+        "description": "Introduction to object-oriented programming concepts in data science",
+        "mid": [
+            { "url": "questions/DS1115/mid/DS1115_Mid_241.pdf" }
+        ],
+        "final": [],
+        "classtest": [
+            { "url": "questions/DS1115/classtest/DS1115_CT4_241.pdf" }
+        ]
     },
     {
         "id": "ENG1013",
@@ -88,7 +118,23 @@
             { "url": "questions/MATH1151/final/MATH1151_Final_233.pdf" },
             { "url": "questions/MATH1151/final/MATH1151_Final_241.pdf" }
         ],
-        "classtest": []
+        "classtest": [
+            { "url": "questions/MATH1151/classtest/MATH1151_CT4_241.pdf" }
+        ]
+    },
+    {
+        "id": "DS1101",
+        "title": "Fundamentals of Data Science",
+        "code": "DS 1101",
+        "abbr": "FDS",
+        "credits": 3,
+        "trimester": 3,
+        "description": "Introduction to data science concepts and methodologies",
+        "mid": [],
+        "final": [],
+        "classtest": [
+            { "url": "questions/DS1101/classtest/DS1101_CT2_242.pdf" }
+        ]
     },
     {
         "id": "BIO3105",
@@ -145,6 +191,21 @@
             { "url": "questions/PHY2105/final/PHY2105_Final_233.pdf" }
         ],
         "classtest": []
+    },
+    {
+        "id": "CSE2215",
+        "title": "Data Structures and Algorithms I",
+        "code": "CSE 2215",
+        "abbr": "DSA 1",
+        "credits": 3,
+        "trimester": 4,
+        "description": "Introduction to data structures and algorithm design",
+        "mid": [],
+        "final": [],
+        "classtest": [
+            { "url": "questions/CSE2215/classtest/CSE2215_CT1_242.pdf" },
+            { "url": "questions/CSE2215/classtest/CSE2215_CT2_242.pdf" }
+        ]
     },
     {
         "id": "IPE3401",
@@ -210,6 +271,20 @@
         "classtest": []
     },
     {
+        "id": "DS3885",
+        "title": "Data Wrangling",
+        "code": "DS 3885",
+        "abbr": "DW",
+        "credits": 3,
+        "trimester": 5,
+        "description": "Techniques for cleaning and transforming data for analysis",
+        "mid": [
+            { "url": "questions/DS3885/mid/DS3885_Mid_251.pdf" }
+        ],
+        "final": [],
+        "classtest": []
+    },
+    {
         "id": "CSE2217",
         "title": "Data Structures and Algorithms II",
         "code": "CSE 2217",
@@ -217,7 +292,9 @@
         "credits": 3,
         "trimester": 5,
         "description": "Advanced data structures and algorithmic thinking",
-        "mid": [],
+        "mid": [
+            { "url": "questions/CSE2217/mid/CSE2217_Mid_251.pdf" }
+        ],
         "final": [
             { "url": "questions/CSE2217/final/CSE2217_Final_241.pdf" },
             { "url": "questions/CSE2217/final/CSE2217_Final_242.pdf" },

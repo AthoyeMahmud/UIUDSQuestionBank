@@ -324,54 +324,66 @@ class UIUQuestionBank {
 
     const trimesterCards = availableExams
       .map((exam) => {
-        // Get just the filename from the URL
         const filename = exam.url.split("/").pop();
-
-        // Remove .pdf extension and split by underscore
         const baseFilename = filename.replace(".pdf", "");
         const nameParts = baseFilename.split("_");
 
-        let trimesterId, trimesterName;
+        let trimesterId, trimesterName, cardContent;
 
-        if (nameParts.length >= 3) {
-          const lastPart = nameParts[nameParts.length - 1];
+        if (
+          examType === "classtest" &&
+          nameParts.length >= 3 &&
+          nameParts[1].startsWith("CT")
+        ) {
+          trimesterId = baseFilename;
+          const classTestNumber = nameParts[1].replace("CT", "");
+          const trimesterCode = nameParts[2];
+          const formattedTrimester = this.formatTrimesterId(trimesterCode);
 
-          // Check if last part is a 3-digit trimester code (e.g., 231)
-          if (/^[0-9]{3}$/.test(lastPart)) {
-            trimesterId = lastPart;
-            trimesterName = this.formatTrimesterId(trimesterId);
+          cardContent = `
+            <div class="trimester-card__season">Class Test ${classTestNumber}</div>
+            <div class="trimester-card__year">${formattedTrimester.season} ${formattedTrimester.year}</div>
+          `;
+        } else {
+          if (nameParts.length >= 3) {
+            const lastPart = nameParts[nameParts.length - 1];
+
+            if (/^[0-9]{3}$/.test(lastPart)) {
+              trimesterId = lastPart;
+              trimesterName = this.formatTrimesterId(trimesterId);
+            } else if (/^(spring|summer|fall)[0-9]{4}$/.test(lastPart)) {
+              trimesterId = lastPart;
+              trimesterName = {
+                season: lastPart.replace(/[0-9]/g, ""),
+                year: lastPart.replace(/[^0-9]/g, ""),
+              };
+            } else if (
+              nameParts.length >= 4 &&
+              /^[0-9]{3}$/.test(nameParts[nameParts.length - 2])
+            ) {
+              trimesterId = nameParts[nameParts.length - 2];
+              trimesterName = this.formatTrimesterId(trimesterId);
+            }
           }
-          // Check if last part contains season and year (e.g., spring2023)
-          else if (/^(spring|summer|fall)[0-9]{4}$/.test(lastPart)) {
-            trimesterId = lastPart;
-            trimesterName = {
-              season: lastPart.replace(/[0-9]/g, ""),
-              year: lastPart.replace(/[^0-9]/g, ""),
-            };
-          }
-          // Handle cases with additional suffixes like _A, _B
-          else if (
-            nameParts.length >= 4 &&
-            /^[0-9]{3}$/.test(nameParts[nameParts.length - 2])
-          ) {
-            // e.g., BDS1201_Final_223_A -> use 223
-            trimesterId = nameParts[nameParts.length - 2];
-            trimesterName = this.formatTrimesterId(trimesterId);
+
+          if (trimesterName) {
+            cardContent = `
+              <div class="trimester-card__season">${trimesterName.season}</div>
+              <div class="trimester-card__year">${trimesterName.year}</div>
+            `;
           }
         }
 
-        // Only return the card if we successfully extracted a trimester ID
-        if (!trimesterId) return "";
+        if (!trimesterId || !cardContent) return "";
 
         return `
-                <a href="/course/${course.id}/exam/${examType}/trimester/${trimesterId}" 
-                   class="trimester-card" data-trimester-id="${trimesterId}" data-filename="${filename}">
-                    <div class="trimester-card__season">${trimesterName.season}</div>
-                    <div class="trimester-card__year">${trimesterName.year}</div>
-                </a>
-            `;
+          <a href="/course/${course.id}/exam/${examType}/trimester/${trimesterId}" 
+             class="trimester-card" data-trimester-id="${trimesterId}" data-filename="${filename}">
+              ${cardContent}
+          </a>
+        `;
       })
-      .filter((card) => card !== "") // Remove empty cards
+      .filter((card) => card !== "")
       .join("");
 
     if (trimesterCards) {
@@ -399,14 +411,29 @@ class UIUQuestionBank {
     const course = this.data.find((c) => c.id === courseId);
     const examTypeData = this.examTypes.find((et) => et.id === examType);
     let trimesterName;
+    let pdfTitleText;
 
-    if (/^[0-9]{3}$/.test(trimesterId)) {
-      trimesterName = this.formatTrimesterId(trimesterId);
-    } else {
-      trimesterName = {
-        season: trimesterId.replace(/[0-9]/g, ""),
-        year: trimesterId.replace(/[^0-9]/g, ""),
-      };
+    if (examType === "classtest") {
+      const nameParts = trimesterId.split("_");
+      if (nameParts.length >= 3) {
+        const classTestNumber = nameParts[1].replace("CT", "");
+        const trimesterCode = nameParts[2];
+        const formattedTrimester = this.formatTrimesterId(trimesterCode);
+        pdfTitleText = `${course.code} - ${examTypeData.name} ${classTestNumber} - ${formattedTrimester.season} ${formattedTrimester.year}`;
+        trimesterName = formattedTrimester; // for breadcrumb
+      }
+    }
+
+    if (!pdfTitleText) {
+      if (/^[0-9]{3}$/.test(trimesterId)) {
+        trimesterName = this.formatTrimesterId(trimesterId);
+      } else {
+        trimesterName = {
+          season: trimesterId.replace(/[0-9]/g, ""),
+          year: trimesterId.replace(/[^0-9]/g, ""),
+        };
+      }
+      pdfTitleText = `${course.code} - ${examTypeData.name} - ${trimesterName.season} ${trimesterName.year}`;
     }
 
     if (!course || !examTypeData) return;
@@ -430,7 +457,7 @@ class UIUQuestionBank {
     // Update PDF view
     const pdfTitle = document.getElementById("pdfTitle");
     if (pdfTitle) {
-      pdfTitle.textContent = `${course.code} - ${examTypeData.name} - ${trimesterName.season} ${trimesterName.year}`;
+      pdfTitle.textContent = pdfTitleText;
     }
 
     // Show PDF preview
@@ -458,29 +485,27 @@ class UIUQuestionBank {
 
     const exams = course[examType] || [];
 
-    // Find exam that matches the trimester ID
     return exams.find((exam) => {
       const filename = exam.url.split("/").pop();
+      const baseFilename = filename.replace(".pdf", "");
 
-      // Remove .pdf extension and split by underscore
-      const nameParts = filename.replace(".pdf", "").split("_");
+      if (examType === "classtest") {
+        return baseFilename === trimesterId;
+      }
+
+      const nameParts = baseFilename.split("_");
 
       if (nameParts.length >= 3) {
         const lastPart = nameParts[nameParts.length - 1];
 
-        // Check if last part is a 3-digit trimester code (e.g., 231)
         if (/^[0-9]{3}$/.test(lastPart) && lastPart === trimesterId) {
           return true;
-        }
-        // Check if last part contains season and year (e.g., spring2023)
-        else if (
+        } else if (
           /^(spring|summer|fall)[0-9]{4}$/.test(lastPart) &&
           lastPart === trimesterId
         ) {
           return true;
-        }
-        // Handle cases with additional suffixes like _A, _B
-        else if (
+        } else if (
           nameParts.length >= 4 &&
           /^[0-9]{3}$/.test(nameParts[nameParts.length - 2])
         ) {
