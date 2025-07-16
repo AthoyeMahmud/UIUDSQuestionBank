@@ -560,31 +560,6 @@ class UIUQuestionBank {
       courseCount.textContent = this.data.length;
     }
 
-    // Update trimester count - This is tricky as trimesters are not a separate list anymore
-    const trimesterCount = document.getElementById("trimesterCount");
-    if (trimesterCount) {
-      const allTrimesters = new Set();
-      this.data.forEach((course) => {
-        this.examTypes.forEach((examType) => {
-          if (course[examType.id]) {
-            course[examType.id].forEach((exam) => {
-              const filename = exam.url.split("/").pop();
-              const nameParts = filename.split(".")[0].split("_");
-              if (nameParts.length > 2) {
-                const potentialTrimesterId = nameParts[nameParts.length - 1];
-                if (/^[0-9]{3}$/.test(potentialTrimesterId)) {
-                  allTrimesters.add(potentialTrimesterId);
-                } else if (nameParts.length > 2) {
-                  allTrimesters.add(nameParts[2]);
-                }
-              }
-            });
-          }
-        });
-      });
-      trimesterCount.textContent = allTrimesters.size;
-    }
-
     // Update exam count
     let totalExams = 0;
     this.data.forEach((course) => {
