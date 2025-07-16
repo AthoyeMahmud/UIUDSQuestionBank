@@ -18,74 +18,42 @@
         ]
     },
     {
-        "id": "DS1501",
-        "title": "Programming for Data Science",
-        "code": "DS 1501",
-        "abbr": "PDS",
+        "id": "ENG1011",
+        "title": "English I",
+        "code": "ENG 1101",
+        "abbr": "English 1",
         "credits": 3,
         "trimester": 1,
-        "description": "Introduction to programming concepts for data science applications",
+        "description": "Foundational English language skills for academic purposes",
         "mid": [
-            { "url": "questions/DS1501/midterm/DS1501_midterm_spring2023.pdf" },
-            { "url": "questions/DS1501/midterm/DS1501_midterm_fall2023.pdf" },
-            { "url": "questions/DS1501/midterm/DS1501_midterm_spring2024.pdf" }
+            { "url": "questions/ENG1011/mid/ENG1011_Mid_213.pdf" },
+            { "url": "questions/ENG1011/mid/ENG1011_Mid_222.pdf" },
+            { "url": "questions/ENG1011/mid/ENG1011_Mid_232.pdf" },
+            { "url": "questions/ENG1011/mid/ENG1011_Mid_241.pdf" }
         ],
         "final": [
-            { "url": "questions/DS1501/final/DS1501_final_spring2023.pdf" },
-            { "url": "questions/DS1501/final/DS1501_final_fall2023.pdf" }
+            { "url": "questions/ENG1011/final/ENG1011_Final_222.pdf" },
+            { "url": "questions/ENG1011/final/ENG1011_Final_241.pdf" }
         ],
-        "classtest": [
-            { "url": "questions/DS1501/classtest/DS1501_classtest_spring2023.pdf" }
-        ]
+        "classtest": []
     },
     {
-        "id": "DS1115",
-        "title": "Object Oriented Programming for Data Science",
-        "code": "DS 1115",
-        "abbr": "OOP for DS",
+        "id": "ENG1013",
+        "title": "English II",
+        "code": "ENG 1013",
+        "abbr": "English 2",
         "credits": 3,
         "trimester": 2,
-        "description": "Object-oriented programming concepts applied to data science",
+        "description": "Advanced English language skills for academic and professional contexts",
         "mid": [
-            { "url": "questions/DS1115/midterm/DS1115_midterm_spring2023.pdf" },
-            { "url": "questions/DS1115/midterm/DS1115_midterm_fall2023.pdf" }
+            { "url": "questions/ENG1013/mid/ENG1013_Mid_221.pdf" },
+            { "url": "questions/ENG1013/mid/ENG1013_Mid_233.pdf" },
+            { "url": "questions/ENG1013/mid/ENG1013_Mid_241.pdf" }
         ],
         "final": [
-            { "url": "questions/DS1115/final/DS1115_final_spring2023.pdf" },
-            { "url": "questions/DS1115/final/DS1115_final_fall2023.pdf" }
-        ],
-        "classtest": []
-    },
-    {
-        "id": "DS1101",
-        "title": "Fundamentals of Data Science",
-        "code": "DS 1101",
-        "abbr": "FDS",
-        "credits": 3,
-        "trimester": 3,
-        "description": "Core concepts and principles of data science",
-        "mid": [
-            { "url": "questions/DS1101/midterm/DS1101_midterm_spring2023.pdf" },
-            { "url": "questions/DS1101/midterm/DS1101_midterm_fall2023.pdf" }
-        ],
-        "final": [
-            { "url": "questions/DS1101/final/DS1101_final_spring2023.pdf" }
-        ],
-        "classtest": []
-    },
-    {
-        "id": "DS3885",
-        "title": "Data Wrangling",
-        "code": "DS 3885",
-        "abbr": "Data Wrangling",
-        "credits": 3,
-        "trimester": 5,
-        "description": "Data cleaning, transformation, and preprocessing techniques",
-        "mid": [
-            { "url": "questions/DS3885/midterm/DS3885_midterm_fall2023.pdf" }
-        ],
-        "final": [
-            { "url": "questions/DS3885/final/DS3885_final_fall2023.pdf" }
+            { "url": "questions/ENG1013/final/ENG1013_Final_223.pdf" },
+            { "url": "questions/ENG1013/final/ENG1013_Final_232.pdf" },
+            { "url": "questions/ENG1013/final/ENG1013_Final_241.pdf" }
         ],
         "classtest": []
     },
@@ -96,49 +64,109 @@
         "abbr": "Calculus",
         "credits": 3,
         "trimester": 2,
-        "description": "Differential and integral calculus foundations",
+        "description": "Introduction to calculus concepts and applications",
         "mid": [
-            { "url": "questions/MATH1151/midterm/MATH1151_midterm_spring2023.pdf" },
-            { "url": "questions/MATH1151/midterm/MATH1151_midterm_fall2023.pdf" }
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_192.pdf" },
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_193.pdf" },
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_203.pdf" },
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_221.pdf" },
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_222.pdf" },
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_223.pdf" },
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_231.pdf" },
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_232.pdf" },
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_233.pdf" },
+            { "url": "questions/MATH1151/mid/MATH1151_Mid_241.pdf" }
         ],
         "final": [
-            { "url": "questions/MATH1151/final/MATH1151_final_fall2023.pdf" },
-            { "url": "questions/MATH1151/final/MATH1151_final_spring2023.pdf" }
+            { "url": "questions/MATH1151/final/MATH1151_Final_173.pdf" },
+            { "url": "questions/MATH1151/final/MATH1151_Final_193.pdf" },
+            { "url": "questions/MATH1151/final/MATH1151_Final_211.pdf" },
+            { "url": "questions/MATH1151/final/MATH1151_Final_221.pdf" },
+            { "url": "questions/MATH1151/final/MATH1151_Final_222.pdf" },
+            { "url": "questions/MATH1151/final/MATH1151_Final_223.pdf" },
+            { "url": "questions/MATH1151/final/MATH1151_Final_232.pdf" },
+            { "url": "questions/MATH1151/final/MATH1151_Final_233.pdf" },
+            { "url": "questions/MATH1151/final/MATH1151_Final_241.pdf" }
         ],
         "classtest": []
     },
     {
-        "id": "MATH2107",
-        "title": "Linear Algebra",
-        "code": "MATH 2107",
-        "abbr": "LA",
+        "id": "BIO3105",
+        "title": "Biology",
+        "code": "BIO 3105",
+        "abbr": "Biology",
         "credits": 3,
         "trimester": 3,
-        "description": "Matrix operations, vector spaces, and linear transformations",
-        "mid": [
-            { "url": "questions/MATH2107/midterm/MATH2107_midterm_spring2023.pdf" },
-            { "url": "questions/MATH2107/midterm/MATH2107_midterm_fall2023.pdf" }
+        "description": "Introduction to biological concepts and systems",
+        "mid": [    
+            { "url": "questions/BIO3105/mid/BIO3105_Mid_221.pdf" },
+            { "url": "questions/BIO3105/mid/BIO3105_Mid_222.pdf" },
+            { "url": "questions/BIO3105/mid/BIO3105_Mid_223.pdf" },
+            { "url": "questions/BIO3105/mid/BIO3105_Mid_231.pdf" },
+            { "url": "questions/BIO3105/mid/BIO3105_Mid_232.pdf" },
+            { "url": "questions/BIO3105/mid/BIO3105_Mid_233.pdf" }
         ],
         "final": [
-            { "url": "questions/MATH2107/final/MATH2107_final_spring2023.pdf" }
+            { "url": "questions/BIO3105/final/BIO3105_Final_221.pdf" },
+            { "url": "questions/BIO3105/final/BIO3105_Final_223.pdf" },
+            { "url": "questions/BIO3105/final/BIO3105_Final_232.pdf" }
         ],
         "classtest": []
     },
     {
-        "id": "CSE2215",
-        "title": "Data Structures and Algorithms I",
-        "code": "CSE 2215",
-        "abbr": "DSA 1",
+        "id": "PHY2105",
+        "title": "Physics",
+        "code": "PHY 2105",
+        "abbr": "Physics",
         "credits": 3,
-        "trimester": 4,
-        "description": "Fundamental data structures and algorithmic thinking",
+        "trimester": 3,
+        "description": "Fundamental principles of physics and their applications",
         "mid": [
-            { "url": "questions/CSE2215/midterm/CSE2215_midterm_spring2023.pdf" },
-            { "url": "questions/CSE2215/midterm/CSE2215_midterm_fall2023.pdf" }
+            { "url": "questions/PHY2105/mid/PHY2105_Mid_203.pdf" },
+            { "url": "questions/PHY2105/mid/PHY2105_Mid_212.pdf" },
+            { "url": "questions/PHY2105/mid/PHY2105_Mid_213.pdf" },
+            { "url": "questions/PHY2105/mid/PHY2105_Mid_221.pdf" },
+            { "url": "questions/PHY2105/mid/PHY2105_Mid_223.pdf" },
+            { "url": "questions/PHY2105/mid/PHY2105_Mid_231.pdf" },
+            { "url": "questions/PHY2105/mid/PHY2105_Mid_232.pdf" },
+            { "url": "questions/PHY2105/mid/PHY2105_Mid_233.pdf" },
+            { "url": "questions/PHY2105/mid/PHY2105_Mid_241.pdf" }
         ],
         "final": [
-            { "url": "questions/CSE2215/final/CSE2215_final_spring2023.pdf" },
-            { "url": "questions/CSE2215/final/CSE2215_final_fall2023.pdf" }
+            { "url": "questions/PHY2105/final/PHY2105_Final_203.pdf" },
+            { "url": "questions/PHY2105/final/PHY2105_Final_211.pdf" },
+            { "url": "questions/PHY2105/final/PHY2105_Final_212.pdf" },
+            { "url": "questions/PHY2105/final/PHY2105_Final_213_A.pdf" },
+            { "url": "questions/PHY2105/final/PHY2105_Final_213_B.pdf" },
+            { "url": "questions/PHY2105/final/PHY2105_Final_221.pdf" },
+            { "url": "questions/PHY2105/final/PHY2105_Final_223.pdf" },
+            { "url": "questions/PHY2105/final/PHY2105_Final_231.pdf" },
+            { "url": "questions/PHY2105/final/PHY2105_Final_232.pdf" },
+            { "url": "questions/PHY2105/final/PHY2105_Final_233.pdf" }
+        ],
+        "classtest": []
+    },
+    {
+        "id": "IPE3401",
+        "title": "Industrial and Operational Management",
+        "code": "IPE 3401",
+        "abbr": "IPE",
+        "credits": 3,
+        "trimester": 4,
+        "description": "Principles of industrial and operational management",
+        "mid": [
+            { "url": "questions/IPE3401/mid/IPE3401_Mid_202.pdf" },
+            { "url": "questions/IPE3401/mid/IPE3401_Mid_221.pdf" },
+            { "url": "questions/IPE3401/mid/IPE3401_Mid_222.pdf" },
+            { "url": "questions/IPE3401/mid/IPE3401_Mid_231.pdf" }
+        ],
+        "final": [
+            { "url": "questions/IPE3401/final/IPE3401_Final_182.pdf" },
+            { "url": "questions/IPE3401/final/IPE3401_Final_202.pdf" },
+            { "url": "questions/IPE3401/final/IPE3401_Final_203.pdf" },
+            { "url": "questions/IPE3401/final/IPE3401_Final_211.pdf" },
+            { "url": "questions/IPE3401/final/IPE3401_Final_213.pdf" },
+            { "url": "questions/IPE3401/final/IPE3401_Final_221.pdf" }
         ],
         "classtest": []
     },
@@ -149,13 +177,35 @@
         "abbr": "DM",
         "credits": 3,
         "trimester": 4,
-        "description": "Mathematical foundations for computer science",
+        "description": "Foundational concepts in discrete mathematics",
         "mid": [
-            { "url": "questions/CSE2213/midterm/CSE2213_midterm_spring2023.pdf" },
-            { "url": "questions/CSE2213/midterm/CSE2213_midterm_fall2023.pdf" }
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_201.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_202.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_203.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_212.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_213.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_221.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_222.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_223.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_231.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_232.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_233.pdf" },
+            { "url": "questions/CSE2213/mid/CSE2213_Mid_241.pdf" }
         ],
         "final": [
-            { "url": "questions/CSE2213/final/CSE2213_final_spring2023.pdf" }
+            { "url": "questions/CSE2213/final/CSE2213_Final_193.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_203.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_211.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_212.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_213.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_221.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_222.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_223.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_231.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_232.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_233.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_241.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_242.pdf" }
         ],
         "classtest": []
     },
@@ -172,6 +222,34 @@
             { "url": "questions/CSE2217/final/CSE2217_Final_241.pdf" },
             { "url": "questions/CSE2217/final/CSE2217_Final_242.pdf" },
             { "url": "questions/CSE2217/final/CSE2217_Final_243.pdf" }
+        ],
+        "classtest": []
+    },
+    {
+        "id": "MATH2205",
+        "title": "Probability and Statistics",
+        "code": "MATH 2205",
+        "abbr": "Stat",
+        "credits": 3,
+        "trimester": 5,
+        "description": "Introduction to probability theory and statistical methods",
+        "mid": [
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_202.pdf" },
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_213.pdf" },
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_221_A.pdf" },
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_221_B.pdf" },
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_223.pdf" },
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_231.pdf" },
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_232.pdf" },
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_241.pdf" }
+        ],
+        "final": [
+            { "url": "questions/MATH2205/final/MATH2205_Final_202.pdf" },
+            { "url": "questions/MATH2205/final/MATH2205_Final_221.pdf" },
+            { "url": "questions/MATH2205/final/MATH2205_Final_222.pdf" },
+            { "url": "questions/MATH2205/final/MATH2205_Final_223.pdf" },
+            { "url": "questions/MATH2205/final/MATH2205_Final_231.pdf" },
+            { "url": "questions/MATH2205/final/MATH2205_Final_241.pdf" }
         ],
         "classtest": []
     }
