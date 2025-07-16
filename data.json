@@ -7,7 +7,9 @@
         "credits": 3,
         "trimester": 1,
         "description": "Introduction to programming concepts and data science applications",
-        "mid": [],
+        "mid": [
+            { "url": "questions/DS1501/mid/DS1501_Mid_233.pdf" }
+        ],
         "final": [
             { "url": "questions/DS1501/final/DS1501_Final_233.pdf" }
         ],
@@ -62,8 +64,12 @@
         "mid": [
             { "url": "questions/DS1115/mid/DS1115_Mid_241.pdf" }
         ],
-        "final": [],
+        "final": [
+            { "url": "questions/DS1115/final/DS1115_Final_241.pdf" }
+        ],
         "classtest": [
+            { "url": "questions/DS1115/classtest/DS1115_CT1_241.pdf" },
+            { "url": "questions/DS1115/classtest/DS1115_CT2_241.pdf" },
             { "url": "questions/DS1115/classtest/DS1115_CT4_241.pdf" }
         ]
     },
@@ -131,10 +137,26 @@
         "trimester": 3,
         "description": "Introduction to data science concepts and methodologies",
         "mid": [],
-        "final": [],
+        "final": [
+            { "url": "questions/DS1101/final/DS1101_Final_242.pdf" }
+        ],
         "classtest": [
             { "url": "questions/DS1101/classtest/DS1101_CT2_242.pdf" }
         ]
+    },
+    {
+        "id": "MATH2107",
+        "title": "Linear Algebra",
+        "code": "MATH 2107",
+        "abbr": "Algebra",
+        "credits": 3,
+        "trimester": 3,
+        "description": "Fundamental concepts of linear algebra and its applications",
+        "mid": [],
+        "final": [
+            { "url": "questions/MATH2107/final/MATH2107_Final_242.pdf" }
+        ],
+        "classtest": []
     },
     {
         "id": "BIO3105",
@@ -155,7 +177,8 @@
         "final": [
             { "url": "questions/BIO3105/final/BIO3105_Final_221.pdf" },
             { "url": "questions/BIO3105/final/BIO3105_Final_223.pdf" },
-            { "url": "questions/BIO3105/final/BIO3105_Final_232.pdf" }
+            { "url": "questions/BIO3105/final/BIO3105_Final_232.pdf" },
+            { "url": "questions/BIO3105/final/BIO3105_Final_242.pdf" }
         ],
         "classtest": []
     },
@@ -200,11 +223,14 @@
         "credits": 3,
         "trimester": 4,
         "description": "Introduction to data structures and algorithm design",
-        "mid": [],
+        "mid": [
+            { "url": "questions/CSE2215/mid/CSE2215_Mid_243.pdf" }
+        ],
         "final": [],
         "classtest": [
             { "url": "questions/CSE2215/classtest/CSE2215_CT1_242.pdf" },
-            { "url": "questions/CSE2215/classtest/CSE2215_CT2_242.pdf" }
+            { "url": "questions/CSE2215/classtest/CSE2215_CT2_242.pdf" },
+            { "url": "questions/CSE2215/classtest/CSE2215_CT4_243.pdf" }
         ]
     },
     {
@@ -219,7 +245,8 @@
             { "url": "questions/IPE3401/mid/IPE3401_Mid_202.pdf" },
             { "url": "questions/IPE3401/mid/IPE3401_Mid_221.pdf" },
             { "url": "questions/IPE3401/mid/IPE3401_Mid_222.pdf" },
-            { "url": "questions/IPE3401/mid/IPE3401_Mid_231.pdf" }
+            { "url": "questions/IPE3401/mid/IPE3401_Mid_231.pdf" },
+            { "url": "questions/IPE3401/mid/IPE3401_Mid_243.pdf" }
         ],
         "final": [
             { "url": "questions/IPE3401/final/IPE3401_Final_182.pdf" },
@@ -227,7 +254,8 @@
             { "url": "questions/IPE3401/final/IPE3401_Final_203.pdf" },
             { "url": "questions/IPE3401/final/IPE3401_Final_211.pdf" },
             { "url": "questions/IPE3401/final/IPE3401_Final_213.pdf" },
-            { "url": "questions/IPE3401/final/IPE3401_Final_221.pdf" }
+            { "url": "questions/IPE3401/final/IPE3401_Final_221.pdf" },
+            { "url": "questions/IPE3401/final/IPE3401_Final_243.pdf" }
         ],
         "classtest": []
     },
@@ -271,6 +299,22 @@
         "classtest": []
     },
     {
+        "id": "MATH1153",
+        "title": "Advanced Calculus",
+        "code": "MATH 1153",
+        "abbr": "AC",
+        "credits": 3,
+        "trimester": 4,
+        "description": "Advanced topics in calculus and their applications",
+        "mid": [
+            { "url": "questions/MATH1153/mid/MATH1153_Mid_243.pdf" }
+        ],
+        "final": [],
+        "classtest": [
+            { "url": "questions/MATH1153/classtest/MATH1153_CT2_243.pdf" }
+        ]
+    },
+    {
         "id": "DS3885",
         "title": "Data Wrangling",
         "code": "DS 3885",
@@ -282,7 +326,9 @@
             { "url": "questions/DS3885/mid/DS3885_Mid_251.pdf" }
         ],
         "final": [],
-        "classtest": []
+        "classtest": [
+            { "url": "questions/DS3885/classtest/DS3885_CT1_251.pdf" }
+        ]
     },
     {
         "id": "CSE2217",
@@ -318,7 +364,8 @@
             { "url": "questions/MATH2205/mid/MATH2205_Mid_223.pdf" },
             { "url": "questions/MATH2205/mid/MATH2205_Mid_231.pdf" },
             { "url": "questions/MATH2205/mid/MATH2205_Mid_232.pdf" },
-            { "url": "questions/MATH2205/mid/MATH2205_Mid_241.pdf" }
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_241.pdf" },
+            { "url": "questions/MATH2205/mid/MATH2205_Mid_251.pdf" }
         ],
         "final": [
             { "url": "questions/MATH2205/final/MATH2205_Final_202.pdf" },
