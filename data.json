@@ -13,7 +13,9 @@
         "final": [
             { "url": "questions/DS1501/final/DS1501_Final_233.pdf" }
         ],
-        "classtest": []
+        "classtest": [
+        { "url": "questions/DS1501/classtest/DS1501_CT3_233.pdf" }
+        ]
     },
     {
         "id": "BDS1201",
@@ -24,7 +26,8 @@
         "trimester": 1,
         "description": "Exploration of the historical events leading to the emergence of Bangladesh",
         "mid": [
-            { "url": "questions/BDS1201/mid/BDS1201_Mid_222.pdf" }
+            { "url": "questions/BDS1201/mid/BDS1201_Mid_222.pdf" },
+            { "url": "questions/BDS1201/mid/BDS1201_Mid_233.pdf" }
         ],
         "final": [
             { "url": "questions/BDS1201/final/BDS1201_Final_221.pdf" },
@@ -125,6 +128,7 @@
             { "url": "questions/MATH1151/final/MATH1151_Final_241.pdf" }
         ],
         "classtest": [
+            { "url": "questions/MATH1151/classtest/MATH1151_CT2_241.pdf" },
             { "url": "questions/MATH1151/classtest/MATH1151_CT4_241.pdf" }
         ]
     },
@@ -226,10 +230,13 @@
         "mid": [
             { "url": "questions/CSE2215/mid/CSE2215_Mid_243.pdf" }
         ],
-        "final": [],
+        "final": [
+            { "url": "questions/CSE2215/final/CSE2215_Final_243.pdf" }
+        ],
         "classtest": [
             { "url": "questions/CSE2215/classtest/CSE2215_CT1_242.pdf" },
             { "url": "questions/CSE2215/classtest/CSE2215_CT2_242.pdf" },
+            { "url": "questions/CSE2215/classtest/CSE2215_CT3_242.pdf" },
             { "url": "questions/CSE2215/classtest/CSE2215_CT4_243.pdf" }
         ]
     },
@@ -294,7 +301,8 @@
             { "url": "questions/CSE2213/final/CSE2213_Final_232.pdf" },
             { "url": "questions/CSE2213/final/CSE2213_Final_233.pdf" },
             { "url": "questions/CSE2213/final/CSE2213_Final_241.pdf" },
-            { "url": "questions/CSE2213/final/CSE2213_Final_242.pdf" }
+            { "url": "questions/CSE2213/final/CSE2213_Final_242.pdf" },
+            { "url": "questions/CSE2213/final/CSE2213_Final_243.pdf" }
         ],
         "classtest": []
     },
@@ -309,9 +317,13 @@
         "mid": [
             { "url": "questions/MATH1153/mid/MATH1153_Mid_243.pdf" }
         ],
-        "final": [],
+        "final": [
+            { "url": "questions/MATH1153/final/MATH1153_Final_243.pdf" }
+        ],
         "classtest": [
-            { "url": "questions/MATH1153/classtest/MATH1153_CT2_243.pdf" }
+            { "url": "questions/MATH1153/classtest/MATH1153_CT2_243.pdf" },
+            { "url": "questions/MATH1153/classtest/MATH1153_CT4_243.pdf" },
+            { "url": "questions/MATH1153/classtest/MATH1153_CT5_243.pdf" }
         ]
     },
     {
@@ -325,9 +337,12 @@
         "mid": [
             { "url": "questions/DS3885/mid/DS3885_Mid_251.pdf" }
         ],
-        "final": [],
+        "final": [
+            { "url": "questions/DS3885/final/DS3885_Final_251.pdf" }
+        ],
         "classtest": [
-            { "url": "questions/DS3885/classtest/DS3885_CT1_251.pdf" }
+            { "url": "questions/DS3885/classtest/DS3885_CT1_251.pdf" },
+            { "url": "questions/DS3885/classtest/DS3885_CT3_251.pdf" }
         ]
     },
     {
@@ -344,9 +359,12 @@
         "final": [
             { "url": "questions/CSE2217/final/CSE2217_Final_241.pdf" },
             { "url": "questions/CSE2217/final/CSE2217_Final_242.pdf" },
-            { "url": "questions/CSE2217/final/CSE2217_Final_243.pdf" }
+            { "url": "questions/CSE2217/final/CSE2217_Final_243.pdf" },
+            { "url": "questions/CSE2217/final/CSE2217_Final_251.pdf" }
         ],
-        "classtest": []
+        "classtest": [
+            { "url": "questions/CSE2217/classtest/CSE2217_CT2_251.pdf" }
+        ]
     },
     {
         "id": "MATH2205",
@@ -373,7 +391,8 @@
             { "url": "questions/MATH2205/final/MATH2205_Final_222.pdf" },
             { "url": "questions/MATH2205/final/MATH2205_Final_223.pdf" },
             { "url": "questions/MATH2205/final/MATH2205_Final_231.pdf" },
-            { "url": "questions/MATH2205/final/MATH2205_Final_241.pdf" }
+            { "url": "questions/MATH2205/final/MATH2205_Final_241.pdf" },
+            { "url": "questions/MATH2205/final/MATH2205_Final_251.pdf" }
         ],
         "classtest": []
     }
