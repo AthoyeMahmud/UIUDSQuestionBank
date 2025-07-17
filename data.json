@@ -68,7 +68,9 @@
             { "url": "questions/DS1115/mid/DS1115_Mid_241.pdf" }
         ],
         "final": [
-            { "url": "questions/DS1115/final/DS1115_Final_241.pdf" }
+            { "url": "questions/DS1115/final/DS1115_Final_241.pdf" },
+            { "url": "questions/DS1115/final/DS1115_Final_242.pdf" },
+            { "url": "questions/DS1115/final/DS1115_Final_243.pdf" }
         ],
         "classtest": [
             { "url": "questions/DS1115/classtest/DS1115_CT1_241.pdf" },
