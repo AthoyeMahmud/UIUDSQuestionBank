@@ -11,7 +11,9 @@
             { "url": "questions/DS1501/mid/DS1501_Mid_233.pdf" }
         ],
         "final": [
-            { "url": "questions/DS1501/final/DS1501_Final_233.pdf" }
+            { "url": "questions/DS1501/final/DS1501_Final_233.pdf" },
+            { "url": "questions/DS1501/final/DS1501_Final_241.pdf" },
+            { "url": "questions/DS1501/final/DS1501_Final_243.pdf" }
         ],
         "classtest": [
         { "url": "questions/DS1501/classtest/DS1501_CT3_233.pdf" }
