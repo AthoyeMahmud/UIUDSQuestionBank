@@ -74,23 +74,11 @@ class UIUQuestionBank {
       }
     });
 
-    // Breadcrumb navigation - use event delegation
-    const breadcrumbContainer = document.getElementById("breadcrumb");
-    if (breadcrumbContainer) {
-      breadcrumbContainer.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (e.target.classList.contains("breadcrumb__link")) {
-          const level = e.target.dataset.level;
-          this.navigateToLevel(level);
-        }
-      });
-    }
-
     // Back button in PDF view
     const backBtn = document.getElementById("backBtn");
     if (backBtn) {
       backBtn.addEventListener("click", () => {
-        this.goBack();
+        window.history.back();
       });
     }
 
@@ -105,34 +93,51 @@ class UIUQuestionBank {
     // Contributors button
     const contributorsBtn = document.getElementById("contributorsBtn");
     if (contributorsBtn) {
-      contributorsBtn.addEventListener("click", () => {
-        this.showContributorsView();
+      contributorsBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        history.pushState(null, "", "/contributors");
+        this.handleLocation();
       });
     }
   }
 
-  goBack() {
-    // Use browser's native back functionality
-    window.history.back();
-  }
+  handleLocation() {
+    const path = window.location.pathname;
+    const segments = path.split("/").filter((segment) => segment);
 
-  navigateToLevel(level) {
-    switch (level) {
-      case "home":
-        this.renderHomeView();
-        break;
-      case "course":
-        if (this.currentCourse) {
-          this.showCourseView(this.currentCourse);
-        }
-        break;
-      case "examType":
-        if (this.currentCourse && this.currentExamType) {
-          this.showTrimesterView(this.currentCourse, this.currentExamType);
-        }
-        break;
-      default:
-        this.renderHomeView();
+    if (segments.length === 0) {
+      // Home page
+      this.renderHomeView();
+    } else if (segments.length === 1 && segments[0] === "contributors") {
+      this.showContributorsView();
+    } else if (segments.length === 2 && segments[0] === "course") {
+      // Course view: /course/{courseId}
+      const courseId = segments[1];
+      this.showCourseView(courseId);
+    } else if (
+      segments.length === 4 &&
+      segments[0] === "course" &&
+      segments[2] === "exam"
+    ) {
+      // Trimester view: /course/{courseId}/exam/{examType}
+      const courseId = segments[1];
+      const examType = segments[3];
+      this.showTrimesterView(courseId, examType);
+    } else if (
+      segments.length === 6 &&
+      segments[0] === "course" &&
+      segments[2] === "exam" &&
+      segments[4] === "trimester"
+    ) {
+      // PDF view: /course/{courseId}/exam/{examType}/trimester/{trimesterId}
+      const courseId = segments[1];
+      const examType = segments[3];
+      const trimesterId = segments[5];
+      this.showPDFView(courseId, examType, trimesterId);
+    } else {
+      // Invalid URL, redirect to home
+      history.pushState(null, "", "/");
+      this.renderHomeView();
     }
   }
 
@@ -157,14 +162,11 @@ class UIUQuestionBank {
     }
   }
 
-  async showContributorsView(pushState = true) {
-    if (pushState) {
-      history.pushState(null, "", "/contributors");
-    }
+  async showContributorsView() {
     this.showView("contributors");
     this.updateBreadcrumb([
-      { text: "Home", level: "home" },
-      { text: "Contributors", level: "contributors" },
+      { text: "Home", href: "/" },
+      { text: "Contributors" },
     ]);
     await this.renderContributors();
   }
@@ -233,30 +235,27 @@ class UIUQuestionBank {
       const li = document.createElement("li");
       li.className = "breadcrumb__item";
 
-      const link = document.createElement("a");
-      link.className =
-        "breadcrumb__link" +
-        (index === levels.length - 1 ? " breadcrumb__link--active" : "");
-      link.href = "#";
-      link.textContent = level.text;
-      link.dataset.level = level.level;
+      if (index === levels.length - 1) {
+        li.textContent = level.text;
+      } else {
+        const link = document.createElement("a");
+        link.className = "breadcrumb__link";
+        link.href = level.href;
+        link.textContent = level.text;
+        li.appendChild(link);
+      }
 
-      li.appendChild(link);
       breadcrumbList.appendChild(li);
     });
   }
 
-  renderHomeView(pushState = true) {
+  renderHomeView() {
     this.currentCourse = null;
     this.currentExamType = null;
     this.currentTrimester = null;
 
-    if (pushState) {
-      history.pushState(null, "", "/");
-    }
-
     this.showView("home");
-    this.updateBreadcrumb([{ text: "Home", level: "home" }]);
+    this.updateBreadcrumb([{ text: "Home" }]);
     this.renderCourseGrid();
   }
 
@@ -307,21 +306,14 @@ class UIUQuestionBank {
       .join("");
   }
 
-  showCourseView(courseId, pushState = true) {
+  showCourseView(courseId) {
     this.currentCourse = courseId;
     const course = this.data.find((c) => c.id === courseId);
 
     if (!course) return;
 
-    if (pushState) {
-      history.pushState(null, "", `/course/${courseId}`);
-    }
-
     this.showView("course");
-    this.updateBreadcrumb([
-      { text: "Home", level: "home" },
-      { text: course.code, level: "course" },
-    ]);
+    this.updateBreadcrumb([{ text: "Home", href: "/" }, { text: course.code }]);
 
     // Update course details
     const courseTitle = document.getElementById("courseTitle");
@@ -366,7 +358,7 @@ class UIUQuestionBank {
       .join("");
   }
 
-  showTrimesterView(courseId, examType, pushState = true) {
+  showTrimesterView(courseId, examType) {
     this.currentCourse = courseId;
     this.currentExamType = examType;
 
@@ -375,15 +367,11 @@ class UIUQuestionBank {
 
     if (!course || !examTypeData) return;
 
-    if (pushState) {
-      history.pushState(null, "", `/course/${courseId}/exam/${examType}`);
-    }
-
     this.showView("trimester");
     this.updateBreadcrumb([
-      { text: "Home", level: "home" },
-      { text: course.code, level: "course" },
-      { text: examTypeData.name, level: "examType" },
+      { text: "Home", href: "/" },
+      { text: course.code, href: `/course/${courseId}` },
+      { text: examTypeData.name },
     ]);
 
     // Render available trimesters
@@ -477,7 +465,7 @@ class UIUQuestionBank {
     }
   }
 
-  showPDFView(courseId, examType, trimesterId, pushState = true) {
+  showPDFView(courseId, examType, trimesterId) {
     this.currentCourse = courseId;
     this.currentExamType = examType;
     this.currentTrimester = trimesterId;
@@ -512,20 +500,15 @@ class UIUQuestionBank {
 
     if (!course || !examTypeData) return;
 
-    if (pushState) {
-      history.pushState(
-        null,
-        "",
-        `/course/${courseId}/exam/${examType}/trimester/${trimesterId}`
-      );
-    }
-
     this.showView("pdf");
     this.updateBreadcrumb([
-      { text: "Home", level: "home" },
-      { text: course.code, level: "course" },
-      { text: examTypeData.name, level: "examType" },
-      { text: `${trimesterName.season} ${trimesterName.year}`, level: "pdf" },
+      { text: "Home", href: "/" },
+      { text: course.code, href: `/course/${courseId}` },
+      {
+        text: examTypeData.name,
+        href: `/course/${courseId}/exam/${examType}`,
+      },
+      { text: `${trimesterName.season} ${trimesterName.year}` },
     ]);
 
     // Update PDF view
@@ -671,45 +654,6 @@ class UIUQuestionBank {
         break;
     }
     return { season, year };
-  }
-
-  handleLocation() {
-    const path = window.location.pathname;
-    const segments = path.split("/").filter((segment) => segment);
-
-    if (segments.length === 0) {
-      // Home page
-      this.renderHomeView(false);
-    } else if (segments.length === 2 && segments[0] === "course") {
-      // Course view: /course/{courseId}
-      const courseId = segments[1];
-      this.showCourseView(courseId, false);
-    } else if (
-      segments.length === 4 &&
-      segments[0] === "course" &&
-      segments[2] === "exam"
-    ) {
-      // Trimester view: /course/{courseId}/exam/{examType}
-      const courseId = segments[1];
-      const examType = segments[3];
-      this.showTrimesterView(courseId, examType, false);
-    } else if (
-      segments.length === 6 &&
-      segments[0] === "course" &&
-      segments[2] === "exam" &&
-      segments[4] === "trimester"
-    ) {
-      // PDF view: /course/{courseId}/exam/{examType}/trimester/{trimesterId}
-      const courseId = segments[1];
-      const examType = segments[3];
-      const trimesterId = segments[5];
-      this.showPDFView(courseId, examType, trimesterId, false);
-    } else if (segments.length === 1 && segments[0] === "contributors") {
-      this.showContributorsView(false);
-    } else {
-      // Invalid URL, redirect to home
-      this.renderHomeView(true);
-    }
   }
 }
 
