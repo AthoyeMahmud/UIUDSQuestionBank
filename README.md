@@ -2,18 +2,6 @@
 
 An interactive web application for browsing and viewing past exam questions for the Data Science department at United International University (UIU). This platform provides an easy-to-use interface for students to access a comprehensive archive of question papers.
 
-## ✨ Features
-
-- **Course Dashboard:** View all available courses in a clean, card-based layout.
-- **Powerful Search:** Instantly search for courses by title, code, or abbreviation.
-- **Categorized Exams:** Questions are neatly organized into Midterm, Final, and Class Test categories.
-- **Trimester-based Filtering:** Easily navigate to questions from specific trimesters (e.g., Spring 2023, Fall 2024).
-- **Built-in PDF Viewer:** Preview question papers directly in the browser without needing to download them first.
-- **Direct Download:** Download PDF files with a single click.
-- **Responsive Design:** Fully functional on both desktop and mobile devices.
-- **SPA Interface:** A fast and smooth single-page application experience with client-side routing.
-- **Statistics:** View the total number of courses and exam papers available.
-
 ## 📂 Project Structure
 
 The project is organized with a clear and maintainable structure:
