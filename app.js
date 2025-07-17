@@ -27,7 +27,7 @@ class UIUQuestionBank {
 
   async loadData() {
     try {
-      const response = await fetch("data.json");
+      const response = await fetch("/data.json");
       this.data = await response.json();
       this.examTypes = [
         {

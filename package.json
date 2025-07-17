@@ -1,0 +1,15 @@
+{
+    "name": "uiudsquestionbank",
+    "version": "1.0.0",
+    "description": "UIU Data Science Question Bank",
+    "main": "app.js",
+    "scripts": {
+        "start": "serve -s ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "serve": "^14.2.3"
+    }
+}
