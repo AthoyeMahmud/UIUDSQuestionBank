@@ -101,6 +101,14 @@ class UIUQuestionBank {
         this.downloadPDF();
       });
     }
+
+    // Contributors button
+    const contributorsBtn = document.getElementById("contributorsBtn");
+    if (contributorsBtn) {
+      contributorsBtn.addEventListener("click", () => {
+        this.showContributorsView();
+      });
+    }
   }
 
   goBack() {
@@ -146,6 +154,72 @@ class UIUQuestionBank {
       document.body.classList.add("pdf-view-active");
     } else {
       document.body.classList.remove("pdf-view-active");
+    }
+  }
+
+  async showContributorsView(pushState = true) {
+    if (pushState) {
+      history.pushState(null, "", "/contributors");
+    }
+    this.showView("contributors");
+    this.updateBreadcrumb([
+      { text: "Home", level: "home" },
+      { text: "Contributors", level: "contributors" },
+    ]);
+    await this.renderContributors();
+  }
+
+  async renderContributors() {
+    const contributorGrid = document.getElementById("contributorGrid");
+    if (!contributorGrid) return;
+
+    try {
+      const response = await fetch("/contributors.json");
+      const contributors = await response.json();
+
+      if (contributors.length === 0) {
+        contributorGrid.innerHTML = `<p>No contributors listed yet.</p>`;
+        return;
+      }
+
+      contributorGrid.innerHTML = contributors
+        .map(
+          (c) => `
+        <div class="contributor-card">
+          <img src="${c.avatarUrl}" alt="${
+            c.name
+          }" class="contributor-card__avatar">
+          <h3 class="contributor-card__name">${c.name}</h3>
+          <div class="contributor-card__socials">
+            ${
+              c.githubUrl
+                ? `<a href="${c.githubUrl}" target="_blank" class="contributor-card__social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.222.694.826.577A12.006 12.006 0 0024 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>`
+                : ""
+            }
+            ${
+              c.linkedinUrl
+                ? `<a href="${c.linkedinUrl}" target="_blank" class="contributor-card__social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>`
+                : ""
+            }
+            ${
+              c.facebookUrl
+                ? `<a href="${c.facebookUrl}" target="_blank" class="contributor-card__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+            </a>`
+                : ""
+            }
+          </div>
+        </div>
+      `
+        )
+        .join("");
+    } catch (error) {
+      console.error("Error loading contributors:", error);
+      contributorGrid.innerHTML = `<p>Could not load contributors.</p>`;
     }
   }
 
@@ -630,6 +704,8 @@ class UIUQuestionBank {
       const examType = segments[3];
       const trimesterId = segments[5];
       this.showPDFView(courseId, examType, trimesterId, false);
+    } else if (segments.length === 1 && segments[0] === "contributors") {
+      this.showContributorsView(false);
     } else {
       // Invalid URL, redirect to home
       this.renderHomeView(true);
